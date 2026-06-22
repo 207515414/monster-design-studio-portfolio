@@ -568,6 +568,124 @@ button {
   font-size: 14px;
 }
 
+.site-footer {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 28px;
+}
+
+.site-footer div,
+.site-footer nav {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-footer strong {
+  font-size: 13px;
+}
+
+.site-footer span,
+.site-footer a {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.site-footer a:hover {
+  color: var(--ink);
+}
+
+.policy-page {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 136px 28px 72px;
+}
+
+.policy-hero {
+  padding-bottom: 42px;
+}
+
+.policy-hero h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 760;
+  letter-spacing: 0;
+  line-height: 1.04;
+  margin: 12px 0 18px;
+}
+
+.policy-hero p {
+  color: var(--muted);
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.62;
+  max-width: 760px;
+}
+
+.policy-hero .button {
+  margin-top: 18px;
+}
+
+.policy-panel {
+  background: var(--panel);
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: 8px;
+  padding: 42px;
+}
+
+.policy-panel article + article {
+  border-top: 1px solid var(--line);
+  margin-top: 30px;
+  padding-top: 30px;
+}
+
+.policy-panel h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.16;
+  margin: 0 0 12px;
+}
+
+.policy-panel p,
+.policy-panel li {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.76;
+}
+
+.policy-panel p {
+  margin: 0;
+}
+
+.policy-panel a {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.policy-panel ul {
+  columns: 2;
+  gap: 36px;
+  margin: 14px 0 0;
+  padding-left: 20px;
+}
+
+.policy-panel li {
+  break-inside: avoid;
+  margin: 5px 0;
+}
+
+.effective-date {
+  border-top: 1px solid var(--line);
+  color: var(--ink) !important;
+  font-weight: 800;
+  margin-top: 34px !important;
+  padding-top: 24px;
+}
+
 .project-dialog {
   background: var(--paper);
   border: 0;
@@ -761,6 +879,24 @@ button {
 
   .contact-links {
     grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 26px 20px;
+  }
+
+  .policy-page {
+    padding: 136px 20px 56px;
+  }
+
+  .policy-panel {
+    padding: 28px 20px;
+  }
+
+  .policy-panel ul {
+    columns: 1;
   }
 
   .project-dialog {

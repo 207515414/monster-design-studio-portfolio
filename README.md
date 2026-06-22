@@ -9,6 +9,7 @@ Static portfolio website for Monster Design Studio: interior visualization, arch
 - Email: zhangzheng270@gmail.com
 - PayPal: https://paypal.me/zhangzheng509
 - Logo: original geometric mark in `assets/brand/logo-mark.svg`; horizontal version in `assets/brand/logo-horizontal.svg`
+- Privacy Policy: `privacy-policy.html`
 
 ## Preview Locally
 
