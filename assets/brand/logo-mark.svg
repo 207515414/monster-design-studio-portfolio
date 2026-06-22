@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Monster Design Studio logo mark</title>
+  <desc id="desc">An original geometric M monogram inside a rounded square for Monster Design Studio.</desc>
+  <rect width="512" height="512" rx="112" fill="#1d1d1f"/>
+  <path d="M132 354V158h48l76 96 76-96h48v196h-50V240l-58 74h-32l-58-74v114z" fill="#fbfbfd"/>
+  <path d="M126 126h260v58" fill="none" stroke="#0071e3" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M386 386H126v-58" fill="none" stroke="#8e8e93" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

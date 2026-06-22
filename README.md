@@ -8,7 +8,7 @@ Static portfolio website for Monster Design Studio: interior visualization, arch
 - WhatsApp: +86 190 3505 7372
 - Email: zhangzheng270@gmail.com
 - PayPal: https://paypal.me/zhangzheng509
-- Logo: text mark placeholder `MDS`
+- Logo: original geometric mark in `assets/brand/logo-mark.svg`; horizontal version in `assets/brand/logo-horizontal.svg`
 
 ## Preview Locally
 
@@ -41,6 +41,7 @@ http://localhost:8080
 - Original PDF/DWG drawing files are not included.
 - The site only includes compressed selected preview images and privacy-safe construction drawing previews.
 - Construction drawing title blocks, client names, and project identifiers are omitted from public preview images.
+- The logo is an original geometric mark designed to avoid monster-claw, animal, and famous-brand visual references. Formal trademark use still requires a proper trademark search in the target countries.
 - If a client project is confidential, remove its folder under `assets/projects` and delete the matching project object in `assets/data.js`.
 - If a construction drawing set is confidential, remove its folder under `assets/drawings` and delete the matching object in `window.CONSTRUCTION_SETS` in `assets/data.js`.
 - For overseas B2B use, send clients the GitHub Pages URL together with a short message and ask them to send one plan, sketch, or reference image for quotation.
