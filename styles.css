@@ -1,14 +1,18 @@
 :root {
-  --ink: #141414;
-  --paper: #f7f5ef;
-  --muted: #75736d;
-  --line: rgba(20, 20, 20, 0.14);
+  --ink: #1d1d1f;
+  --paper: #f5f5f7;
+  --muted: #6e6e73;
+  --line: rgba(29, 29, 31, 0.12);
   --panel: #ffffff;
-  --accent: #6f8f86;
-  --accent-2: #b84d3c;
-  --dark: #171918;
-  --light: #fffdf7;
-  --shadow: 0 24px 60px rgba(18, 22, 21, 0.22);
+  --glass: rgba(255, 255, 255, 0.82);
+  --blue: #0071e3;
+  --blue-press: #005bb5;
+  --green: #2f8f6f;
+  --coral: #bf5b45;
+  --dark: #111114;
+  --light: #fbfbfd;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
+  --soft-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -23,7 +27,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Arial, sans-serif;
   letter-spacing: 0;
 }
 
@@ -47,13 +51,13 @@ button {
 
 .site-header {
   align-items: center;
-  backdrop-filter: blur(18px);
-  background: rgba(247, 245, 239, 0.8);
-  border-bottom: 1px solid rgba(20, 20, 20, 0.08);
+  backdrop-filter: saturate(180%) blur(24px);
+  background: rgba(251, 251, 253, 0.78);
+  border-bottom: 1px solid rgba(29, 29, 31, 0.08);
   display: flex;
   justify-content: space-between;
   left: 0;
-  min-height: 64px;
+  min-height: 56px;
   padding: 0 28px;
   position: fixed;
   right: 0;
@@ -65,29 +69,32 @@ button {
 .nav-links {
   align-items: center;
   display: flex;
-  gap: 18px;
+  gap: 16px;
 }
 
 .brand {
+  color: rgba(29, 29, 31, 0.92);
   font-size: 13px;
   font-weight: 700;
-  text-transform: uppercase;
 }
 
 .brand-mark {
   align-items: center;
-  background: var(--dark);
+  background: var(--ink);
+  border-radius: 8px;
   color: var(--light);
   display: inline-flex;
   font-size: 11px;
-  height: 34px;
+  height: 32px;
   justify-content: center;
   width: 44px;
 }
 
 .nav-links a {
-  color: rgba(20, 20, 20, 0.76);
+  color: rgba(29, 29, 31, 0.72);
   font-size: 13px;
+  font-weight: 600;
+  padding: 18px 0;
 }
 
 .nav-links a:hover {
@@ -109,28 +116,27 @@ button {
 .hero-media img {
   height: 100%;
   object-fit: cover;
-  transform: scale(1.03);
+  transform: scale(1.02);
   width: 100%;
 }
 
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(16, 18, 17, 0.78), rgba(16, 18, 17, 0.26) 54%, rgba(16, 18, 17, 0.12)),
-    linear-gradient(0deg, rgba(16, 18, 17, 0.5), rgba(16, 18, 17, 0) 42%);
+    linear-gradient(90deg, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.28) 55%, rgba(0, 0, 0, 0.1)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0) 48%);
 }
 
 .hero-content {
   color: var(--light);
-  max-width: 840px;
-  padding: 21vh 28px 18vh;
-  position: relative;
-  width: min(100%, 1160px);
   margin: 0 auto;
+  max-width: 1180px;
+  padding: 22vh 28px 15vh;
+  position: relative;
 }
 
 .eyebrow,
 .section-label {
-  color: var(--accent);
+  color: var(--blue);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0;
@@ -143,23 +149,22 @@ button {
 .section-heading h2,
 .process h2,
 .contact h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 500;
+  font-weight: 750;
   letter-spacing: 0;
-  line-height: 1.02;
+  line-height: 1.04;
   margin: 0;
 }
 
 .hero h1 {
-  font-size: clamp(44px, 8vw, 92px);
-  max-width: 850px;
+  font-size: clamp(48px, 7.5vw, 96px);
+  max-width: 940px;
 }
 
 .hero-copy {
-  color: rgba(255, 253, 247, 0.82);
-  font-size: 19px;
-  line-height: 1.7;
-  max-width: 640px;
+  color: rgba(251, 251, 253, 0.84);
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.55;
+  max-width: 760px;
 }
 
 .hero-actions,
@@ -173,27 +178,45 @@ button {
 
 .button {
   align-items: center;
+  border-radius: 999px;
   display: inline-flex;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 700;
   justify-content: center;
   min-height: 44px;
-  padding: 0 18px;
-  text-transform: uppercase;
+  padding: 0 20px;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
 }
 
 .button.primary {
-  background: var(--accent);
-  color: #07100d;
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.button.primary:hover {
+  background: var(--blue-press);
 }
 
 .button.secondary {
-  border: 1px solid rgba(255, 253, 247, 0.55);
+  border: 1px solid rgba(251, 251, 253, 0.54);
   color: var(--light);
 }
 
+.button.secondary:hover {
+  border-color: rgba(251, 251, 253, 0.9);
+  background: rgba(251, 251, 253, 0.1);
+}
+
 .button.secondary.dark {
-  border-color: rgba(255, 253, 247, 0.45);
+  border-color: rgba(251, 251, 253, 0.38);
   color: var(--light);
 }
 
@@ -201,11 +224,11 @@ button {
   background: var(--dark);
   color: var(--light);
   overflow: hidden;
-  padding: 16px 0;
+  padding: 14px 0;
 }
 
 .strip-track {
-  animation: marquee 32s linear infinite;
+  animation: marquee 34s linear infinite;
   display: flex;
   gap: 54px;
   white-space: nowrap;
@@ -213,9 +236,9 @@ button {
 }
 
 .strip-track span {
-  color: rgba(255, 253, 247, 0.76);
+  color: rgba(251, 251, 253, 0.76);
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   padding-left: 28px;
   text-transform: uppercase;
 }
@@ -232,13 +255,13 @@ button {
 .section {
   margin: 0 auto;
   max-width: 1180px;
-  padding: 92px 28px;
+  padding: 108px 28px;
 }
 
 .intro-grid {
   display: grid;
   gap: 48px;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
   margin-top: 20px;
 }
 
@@ -246,25 +269,32 @@ button {
 .section-heading h2,
 .process h2,
 .contact h2 {
-  font-size: clamp(34px, 5vw, 58px);
+  font-size: clamp(36px, 5vw, 64px);
 }
 
 .intro-copy p,
 .service p,
 .process span,
 .contact p,
-.dialog-info p {
+.dialog-info p,
+.section-note,
+.project-body p,
+.drawing-body p {
   color: var(--muted);
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.72;
 }
 
 .section-heading {
   align-items: end;
   display: flex;
-  gap: 24px;
+  gap: 28px;
   justify-content: space-between;
   margin-bottom: 34px;
+}
+
+.section-note {
+  max-width: 360px;
 }
 
 .filters {
@@ -275,17 +305,23 @@ button {
 }
 
 .filter {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.7);
   border: 1px solid var(--line);
-  color: rgba(20, 20, 20, 0.72);
+  border-radius: 999px;
+  color: rgba(29, 29, 31, 0.72);
   cursor: pointer;
   min-height: 38px;
-  padding: 0 14px;
+  padding: 0 15px;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
 }
 
 .filter.active,
 .filter:hover {
   background: var(--ink);
+  border-color: var(--ink);
   color: var(--light);
 }
 
@@ -295,61 +331,120 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.project-card {
+.project-card,
+.drawing-card {
   background: var(--panel);
-  border: 1px solid rgba(20, 20, 20, 0.08);
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: 8px;
   cursor: pointer;
   overflow: hidden;
   position: relative;
   transform: translateZ(0);
+  transition:
+    box-shadow 260ms ease,
+    transform 260ms ease,
+    border-color 260ms ease;
+}
+
+.project-card:hover,
+.drawing-card:hover {
+  border-color: rgba(29, 29, 31, 0.16);
+  box-shadow: var(--soft-shadow);
+  transform: translateY(-3px);
 }
 
 .project-card[hidden] {
   display: none;
 }
 
-.project-media {
-  aspect-ratio: 16 / 10;
-  background: #e7e4db;
+.project-media,
+.drawing-media {
+  background: #e8e8ed;
   overflow: hidden;
 }
 
-.project-media img {
+.project-media {
+  aspect-ratio: 16 / 10;
+}
+
+.drawing-media {
+  aspect-ratio: 16 / 11;
+}
+
+.project-media img,
+.drawing-media img {
   height: 100%;
   object-fit: cover;
   transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
   width: 100%;
 }
 
-.project-card:hover img {
-  transform: scale(1.055);
+.drawing-media img {
+  object-fit: contain;
+  padding: 10px;
+}
+
+.project-card:hover img,
+.drawing-card:hover img {
+  transform: scale(1.035);
+}
+
+.project-body,
+.drawing-body {
+  padding: 20px;
 }
 
 .project-body {
   display: grid;
   gap: 12px;
   grid-template-columns: 1fr auto;
-  padding: 18px;
 }
 
-.project-body h3 {
-  font-size: 20px;
+.drawing-body {
+  display: grid;
+  gap: 12px;
+}
+
+.project-body h3,
+.drawing-body h3 {
+  font-size: 22px;
   line-height: 1.18;
   margin: 0;
 }
 
 .project-body p {
-  color: var(--muted);
   grid-column: 1 / -1;
-  line-height: 1.55;
   margin: 0;
 }
 
 .project-count {
-  color: var(--accent-2);
+  color: var(--coral);
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.drawing-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.drawing-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.drawing-meta span {
+  background: #f5f5f7;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: rgba(29, 29, 31, 0.72);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 10px;
 }
 
 .service-grid {
@@ -360,17 +455,20 @@ button {
 }
 
 .service {
-  border-top: 1px solid var(--line);
-  padding-top: 22px;
+  background: var(--panel);
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: 8px;
+  padding: 24px;
 }
 
 .service span {
-  color: var(--accent-2);
+  color: var(--green);
   font-weight: 800;
 }
 
 .service h3 {
   font-size: 24px;
+  line-height: 1.16;
   margin: 18px 0 8px;
 }
 
@@ -381,35 +479,38 @@ button {
 }
 
 .timeline {
-  border-left: 1px solid var(--line);
+  background: var(--panel);
+  border: 1px solid rgba(29, 29, 31, 0.08);
+  border-radius: 8px;
   display: grid;
-  gap: 0;
+  overflow: hidden;
 }
 
 .timeline div {
   border-bottom: 1px solid var(--line);
   display: grid;
   gap: 8px;
-  padding: 0 0 26px 28px;
+  padding: 24px 26px;
   position: relative;
 }
 
-.timeline div + div {
-  padding-top: 26px;
+.timeline div:last-child {
+  border-bottom: 0;
 }
 
 .timeline div::before {
-  background: var(--accent-2);
+  background: var(--blue);
+  border-radius: 999px;
   content: "";
-  height: 9px;
-  left: -5px;
+  height: 8px;
+  left: 0;
   position: absolute;
-  top: 5px;
-  width: 9px;
+  top: 31px;
+  width: 8px;
 }
 
-.timeline div + div::before {
-  top: 31px;
+.timeline strong {
+  font-size: 18px;
 }
 
 .contact {
@@ -420,14 +521,17 @@ button {
 
 .contact-panel {
   background: var(--dark);
+  border-radius: 8px;
   color: var(--light);
   margin: 0 auto;
   max-width: 1180px;
-  padding: 58px;
+  overflow: hidden;
+  padding: 60px;
+  position: relative;
 }
 
 .contact-panel p {
-  color: rgba(255, 253, 247, 0.74);
+  color: rgba(251, 251, 253, 0.74);
   max-width: 720px;
 }
 
@@ -440,10 +544,12 @@ button {
 }
 
 .contact-links a {
-  border: 1px solid rgba(255, 253, 247, 0.2);
+  border: 1px solid rgba(251, 251, 253, 0.2);
+  border-radius: 8px;
   display: grid;
   gap: 6px;
   padding: 16px;
+  transition: border-color 180ms ease;
 }
 
 .contact-links strong {
@@ -453,26 +559,28 @@ button {
 }
 
 .contact-links span {
-  color: rgba(255, 253, 247, 0.72);
+  color: rgba(251, 251, 253, 0.72);
   font-size: 15px;
   overflow-wrap: anywhere;
 }
 
 .contact-links a:hover {
-  border-color: rgba(255, 253, 247, 0.48);
+  border-color: rgba(251, 251, 253, 0.48);
 }
 
 .contact-actions span {
-  color: rgba(255, 253, 247, 0.66);
+  color: rgba(251, 251, 253, 0.66);
   font-size: 14px;
 }
 
 .project-dialog {
   background: var(--paper);
   border: 0;
+  border-radius: 8px;
   color: var(--ink);
   height: min(92vh, 920px);
   max-width: 1180px;
+  overflow: hidden;
   padding: 0;
   width: min(94vw, 1180px);
 }
@@ -486,7 +594,7 @@ button {
 }
 
 .project-dialog.fallback-open::before {
-  background: rgba(10, 12, 11, 0.76);
+  background: rgba(0, 0, 0, 0.62);
   content: "";
   inset: -10vh -10vw;
   position: fixed;
@@ -494,20 +602,21 @@ button {
 }
 
 .project-dialog::backdrop {
-  background: rgba(10, 12, 11, 0.76);
+  background: rgba(0, 0, 0, 0.62);
 }
 
 .dialog-close {
-  background: var(--dark);
+  background: rgba(29, 29, 31, 0.9);
   border: 0;
+  border-radius: 999px;
   color: var(--light);
   cursor: pointer;
-  font-size: 28px;
-  height: 42px;
+  font-size: 24px;
+  height: 40px;
   position: absolute;
   right: 14px;
   top: 14px;
-  width: 42px;
+  width: 40px;
   z-index: 4;
 }
 
@@ -518,16 +627,16 @@ button {
 }
 
 .dialog-info {
+  background: rgba(251, 251, 253, 0.86);
   border-right: 1px solid var(--line);
   overflow: auto;
   padding: 38px 26px;
 }
 
 .dialog-info h2 {
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 34px;
-  font-weight: 500;
-  line-height: 1.06;
+  font-weight: 750;
+  line-height: 1.08;
   margin: 12px 0;
 }
 
@@ -539,14 +648,17 @@ button {
 }
 
 .tag-list span {
+  background: #ffffff;
   border: 1px solid var(--line);
-  color: rgba(20, 20, 20, 0.72);
+  border-radius: 999px;
+  color: rgba(29, 29, 31, 0.72);
   font-size: 12px;
   font-weight: 700;
   padding: 8px 10px;
 }
 
 .viewer {
+  background: #ffffff;
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
   min-width: 0;
@@ -562,6 +674,7 @@ button {
 }
 
 .thumb-rail {
+  background: rgba(245, 245, 247, 0.86);
   border-top: 1px solid var(--line);
   display: flex;
   gap: 10px;
@@ -572,13 +685,15 @@ button {
 .thumb-rail button {
   background: transparent;
   border: 2px solid transparent;
+  border-radius: 8px;
   cursor: pointer;
   flex: 0 0 110px;
+  overflow: hidden;
   padding: 0;
 }
 
 .thumb-rail button.active {
-  border-color: var(--accent-2);
+  border-color: var(--blue);
 }
 
 .thumb-rail img {
@@ -601,12 +716,12 @@ button {
   transform: translateY(0);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .site-header {
     align-items: flex-start;
     flex-direction: column;
-    gap: 10px;
-    padding: 14px 18px;
+    gap: 8px;
+    padding: 12px 18px;
   }
 
   .nav-links {
@@ -615,16 +730,21 @@ button {
     width: 100%;
   }
 
+  .nav-links a {
+    padding: 0 0 8px;
+  }
+
   .hero-content {
-    padding: 24vh 20px 15vh;
+    padding: 24vh 20px 13vh;
   }
 
   .section {
-    padding: 68px 20px;
+    padding: 72px 20px;
   }
 
   .intro-grid,
   .project-grid,
+  .drawing-grid,
   .service-grid,
   .process,
   .dialog-layout {
@@ -641,7 +761,7 @@ button {
   }
 
   .contact-panel {
-    padding: 36px 22px;
+    padding: 38px 22px;
   }
 
   .contact-links {
@@ -660,6 +780,24 @@ button {
 
   #viewerImage {
     padding: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 15vw, 62px);
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .project-body {
+    grid-template-columns: 1fr;
   }
 }
 

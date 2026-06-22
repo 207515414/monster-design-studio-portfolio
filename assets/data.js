@@ -340,3 +340,111 @@ window.PORTFOLIO_PROJECTS = [
     ]
   }
 ];
+
+window.CONSTRUCTION_SETS = [
+  {
+    "id": "interior-documentation",
+    "title": "26th Floor Interior Documentation",
+    "type": "Construction Drawing Set",
+    "scope": "Interior / CAD Documentation",
+    "location": "Confidential Office Renovation",
+    "summary": "An anonymized office renovation drawing package showing planning, partitions, reflected ceiling coordination, finish notes, and waterproofing-related documentation. Client names and title-block information are omitted from public previews.",
+    "services": [
+      "Interior construction drawings",
+      "CAD drafting",
+      "Drawing coordination",
+      "Privacy-safe PDF previews"
+    ],
+    "sheetCount": 17,
+    "cover": "assets/drawings/interior-documentation/02.webp",
+    "coverThumb": "assets/drawings/interior-documentation/02-thumb.webp",
+    "slides": [
+      {
+        "image": "assets/drawings/interior-documentation/01.webp",
+        "thumb": "assets/drawings/interior-documentation/01-thumb.webp"
+      },
+      {
+        "image": "assets/drawings/interior-documentation/02.webp",
+        "thumb": "assets/drawings/interior-documentation/02-thumb.webp"
+      },
+      {
+        "image": "assets/drawings/interior-documentation/03.webp",
+        "thumb": "assets/drawings/interior-documentation/03-thumb.webp"
+      },
+      {
+        "image": "assets/drawings/interior-documentation/04.webp",
+        "thumb": "assets/drawings/interior-documentation/04-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": "elevation-details",
+    "title": "Elevation & Detail Drawings",
+    "type": "Construction Drawing Set",
+    "scope": "Elevations / Details",
+    "location": "Confidential Office Renovation",
+    "summary": "An anonymized documentation sample focused on interior elevations, dimensions, material callouts, section logic, and construction-detail communication for contractor review.",
+    "services": [
+      "Interior elevations",
+      "Detail drawings",
+      "Material callouts",
+      "Contractor-ready documentation"
+    ],
+    "sheetCount": 20,
+    "cover": "assets/drawings/elevation-details/02.webp",
+    "coverThumb": "assets/drawings/elevation-details/02-thumb.webp",
+    "slides": [
+      {
+        "image": "assets/drawings/elevation-details/01.webp",
+        "thumb": "assets/drawings/elevation-details/01-thumb.webp"
+      },
+      {
+        "image": "assets/drawings/elevation-details/02.webp",
+        "thumb": "assets/drawings/elevation-details/02-thumb.webp"
+      },
+      {
+        "image": "assets/drawings/elevation-details/03.webp",
+        "thumb": "assets/drawings/elevation-details/03-thumb.webp"
+      },
+      {
+        "image": "assets/drawings/elevation-details/04.webp",
+        "thumb": "assets/drawings/elevation-details/04-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": "electrical-coordination",
+    "title": "Electrical Coordination Drawings",
+    "type": "Construction Drawing Set",
+    "scope": "Electrical / MEP Coordination",
+    "location": "Confidential Office Renovation",
+    "summary": "An anonymized electrical coordination sample covering power, lighting, communication, security, and low-voltage layout coordination for interior renovation projects.",
+    "services": [
+      "Electrical layouts",
+      "Lighting coordination",
+      "Low-voltage planning",
+      "MEP drawing support"
+    ],
+    "sheetCount": 13,
+    "cover": "assets/drawings/electrical-coordination/03.webp",
+    "coverThumb": "assets/drawings/electrical-coordination/03-thumb.webp",
+    "slides": [
+      {
+        "image": "assets/drawings/electrical-coordination/01.webp",
+        "thumb": "assets/drawings/electrical-coordination/01-thumb.webp"
+      },
+      {
+        "image": "assets/drawings/electrical-coordination/02.webp",
+        "thumb": "assets/drawings/electrical-coordination/02-thumb.webp"
+      },
+      {
+        "image": "assets/drawings/electrical-coordination/03.webp",
+        "thumb": "assets/drawings/electrical-coordination/03-thumb.webp"
+      },
+      {
+        "image": "assets/drawings/electrical-coordination/04.webp",
+        "thumb": "assets/drawings/electrical-coordination/04-thumb.webp"
+      }
+    ]
+  }
+];

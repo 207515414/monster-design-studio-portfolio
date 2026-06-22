@@ -1,5 +1,7 @@
 const projects = window.PORTFOLIO_PROJECTS || [];
+const drawingSets = window.CONSTRUCTION_SETS || [];
 const grid = document.querySelector("#projectGrid");
+const drawingGrid = document.querySelector("#drawingGrid");
 const heroImage = document.querySelector("#heroImage");
 const dialog = document.querySelector("#projectDialog");
 const dialogTitle = document.querySelector("#dialogTitle");
@@ -52,9 +54,45 @@ function renderProjects() {
   observeReveals();
 }
 
+function renderDrawingSets() {
+  if (!drawingGrid) return;
+  drawingGrid.innerHTML = "";
+  drawingSets.forEach((set, index) => {
+    const card = document.createElement("article");
+    card.className = "drawing-card reveal";
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-label", `Open ${set.title}`);
+    card.style.transitionDelay = `${Math.min(index * 90, 270)}ms`;
+    card.innerHTML = `
+      <div class="drawing-media">
+        <img src="${set.cover}" alt="${set.title}" loading="lazy">
+      </div>
+      <div class="drawing-body">
+        <p class="section-label">${set.scope}</p>
+        <h3>${set.title}</h3>
+        <p>${set.summary}</p>
+        <div class="drawing-meta">
+          <span>${set.sheetCount} sheets</span>
+          <span>${set.slides.length} preview pages</span>
+        </div>
+      </div>
+    `;
+    card.addEventListener("click", () => openProject(set));
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openProject(set);
+      }
+    });
+    drawingGrid.appendChild(card);
+  });
+  observeReveals();
+}
+
 function openProject(project) {
   dialogTitle.textContent = project.title;
-  dialogType.textContent = `${project.type} · ${project.location}`;
+  dialogType.textContent = [project.type, project.location].filter(Boolean).join(" / ");
   dialogSummary.textContent = project.summary;
   dialogTags.innerHTML = project.services.map((service) => `<span>${service}</span>`).join("");
   thumbRail.innerHTML = "";
@@ -142,5 +180,6 @@ dialog.addEventListener("cancel", () => {
 
 initHero();
 renderProjects();
+renderDrawingSets();
 bindFilters();
 observeReveals();

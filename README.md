@@ -1,6 +1,6 @@
 # Monster Design Studio Portfolio Site
 
-Static portfolio website for Monster Design Studio: interior visualization, architectural presentation, FF&E, office interior, and drafting support.
+Static portfolio website for Monster Design Studio: interior visualization, architectural presentation, FF&E, office interior, drafting support, and anonymized construction drawing previews.
 
 ## Contact
 
@@ -38,7 +38,9 @@ http://localhost:8080
 ## Notes
 
 - Original PPT/PPTX files are not included.
-- The site only includes compressed selected preview images.
+- Original PDF/DWG drawing files are not included.
+- The site only includes compressed selected preview images and privacy-safe construction drawing previews.
+- Construction drawing title blocks, client names, and project identifiers are omitted from public preview images.
 - If a client project is confidential, remove its folder under `assets/projects` and delete the matching project object in `assets/data.js`.
+- If a construction drawing set is confidential, remove its folder under `assets/drawings` and delete the matching object in `window.CONSTRUCTION_SETS` in `assets/data.js`.
 - For overseas B2B use, send clients the GitHub Pages URL together with a short message and ask them to send one plan, sketch, or reference image for quotation.
-
