@@ -43,6 +43,6 @@ http://localhost:8080
 - The site uses cropped public preview images under `assets/public` and privacy-safe construction drawing previews.
 - Construction drawing title blocks, client names, and project identifiers are omitted from public preview images.
 - The logo is an original geometric mark designed to avoid monster-claw, animal, and famous-brand visual references. Formal trademark use still requires a proper trademark search in the target countries.
-- If a client project is confidential, remove its folder under `assets/projects` and delete the matching project object in `assets/data.js`.
+- If a client project is confidential, remove its public preview folder under `assets/public/projects` and delete the matching project object in `assets/data.js`.
 - If a construction drawing set is confidential, remove its folder under `assets/drawings` and delete the matching object in `window.CONSTRUCTION_SETS` in `assets/data.js`.
 - For overseas B2B use, send clients the GitHub Pages URL together with a short message and ask them to send one plan, sketch, or reference image for quotation.
