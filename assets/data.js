@@ -1,450 +1,187 @@
 window.PORTFOLIO_PROJECTS = [
   {
-    "id": "shanghai-duplex",
-    "title": "Shanghai Duplex Luxury Residence",
-    "type": "Luxury Residential / Duplex Interior",
-    "location": "Shanghai, China",
-    "summary": "A high-end duplex residence presentation focused on refined spatial sequencing, material atmosphere, and premium interior visualization.",
-    "services": [
-      "Interior visualization",
-      "Concept presentation",
-      "Material mood",
-      "Luxury residence"
-    ],
-    "cover": "assets/projects/shanghai-duplex/05.webp",
-    "coverThumb": "assets/projects/shanghai-duplex/05-thumb.webp",
-    "slides": [
-      {
-        "image": "assets/projects/shanghai-duplex/01.webp",
-        "thumb": "assets/projects/shanghai-duplex/01-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 51072,
-        "thumbBytes": 9388
-      },
-      {
-        "image": "assets/projects/shanghai-duplex/02.webp",
-        "thumb": "assets/projects/shanghai-duplex/02-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 59256,
-        "thumbBytes": 10704
-      },
-      {
-        "image": "assets/projects/shanghai-duplex/03.webp",
-        "thumb": "assets/projects/shanghai-duplex/03-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 54434,
-        "thumbBytes": 12682
-      },
-      {
-        "image": "assets/projects/shanghai-duplex/04.webp",
-        "thumb": "assets/projects/shanghai-duplex/04-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 43692,
-        "thumbBytes": 8818
-      },
-      {
-        "image": "assets/projects/shanghai-duplex/05.webp",
-        "thumb": "assets/projects/shanghai-duplex/05-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 85700,
-        "thumbBytes": 14936
-      },
-      {
-        "image": "assets/projects/shanghai-duplex/06.webp",
-        "thumb": "assets/projects/shanghai-duplex/06-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 41696,
-        "thumbBytes": 8228
-      },
-      {
-        "image": "assets/projects/shanghai-duplex/07.webp",
-        "thumb": "assets/projects/shanghai-duplex/07-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 73032,
-        "thumbBytes": 8492
-      },
-      {
-        "image": "assets/projects/shanghai-duplex/08.webp",
-        "thumb": "assets/projects/shanghai-duplex/08-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 47186,
-        "thumbBytes": 10158
-      },
-      {
-        "image": "assets/projects/shanghai-duplex/09.webp",
-        "thumb": "assets/projects/shanghai-duplex/09-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 23828,
-        "thumbBytes": 5144
-      }
+    id: "shanghai-duplex",
+    title: "Shanghai Duplex Luxury Residence",
+    category: "Residential",
+    projectType: "Luxury Residential / Duplex Interior",
+    location: "Shanghai, China",
+    status: "Concept Design / Visualization",
+    scope: "Interior visualization, concept presentation, material mood direction",
+    summary:
+      "A high-end duplex residence presentation focused on refined spatial sequencing, material atmosphere, and premium interior visualization.",
+    description:
+      "This residential presentation explores a layered interior atmosphere through spatial views, material direction, and client-facing visuals. The public portfolio shows selected presentation images only; full proposal materials are not published.",
+    services: ["Interior visualization", "Concept presentation", "Material mood", "Luxury residence"],
+    tags: ["Concept Design", "Visualization", "Design Development"],
+    cover: "assets/public/projects/shanghai-duplex/05.webp",
+    coverThumb: "assets/public/projects/shanghai-duplex/05-thumb.webp",
+    featured: true,
+    slides: [
+      { image: "assets/public/projects/shanghai-duplex/01.webp", thumb: "assets/public/projects/shanghai-duplex/01-thumb.webp", width: 1500, height: 871 },
+      { image: "assets/public/projects/shanghai-duplex/02.webp", thumb: "assets/public/projects/shanghai-duplex/02-thumb.webp", width: 1500, height: 871 },
+      { image: "assets/public/projects/shanghai-duplex/03.webp", thumb: "assets/public/projects/shanghai-duplex/03-thumb.webp", width: 1500, height: 871 },
+      { image: "assets/public/projects/shanghai-duplex/04.webp", thumb: "assets/public/projects/shanghai-duplex/04-thumb.webp", width: 1500, height: 871 },
+      { image: "assets/public/projects/shanghai-duplex/05.webp", thumb: "assets/public/projects/shanghai-duplex/05-thumb.webp", width: 1500, height: 871 },
+      { image: "assets/public/projects/shanghai-duplex/06.webp", thumb: "assets/public/projects/shanghai-duplex/06-thumb.webp", width: 1500, height: 871 },
+      { image: "assets/public/projects/shanghai-duplex/07.webp", thumb: "assets/public/projects/shanghai-duplex/07-thumb.webp", width: 1500, height: 871 },
+      { image: "assets/public/projects/shanghai-duplex/08.webp", thumb: "assets/public/projects/shanghai-duplex/08-thumb.webp", width: 1500, height: 871 },
+      { image: "assets/public/projects/shanghai-duplex/09.webp", thumb: "assets/public/projects/shanghai-duplex/09-thumb.webp", width: 1500, height: 871 }
     ]
   },
   {
-    "id": "guangzhou-villa",
-    "title": "Guangzhou Yunheshu Villa",
-    "type": "Villa Interior / FF&E Development",
-    "location": "Guangzhou, China",
-    "summary": "A villa design package combining design development and soft furnishing direction for a layered residential client presentation.",
-    "services": [
-      "Villa interior",
-      "FF&E concept",
-      "Design development",
-      "Presentation deck"
-    ],
-    "cover": "assets/projects/guangzhou-villa/03.webp",
-    "coverThumb": "assets/projects/guangzhou-villa/03-thumb.webp",
-    "slides": [
-      {
-        "image": "assets/projects/guangzhou-villa/01.webp",
-        "thumb": "assets/projects/guangzhou-villa/01-thumb.webp",
-        "width": 1500,
-        "height": 973,
-        "bytes": 36016,
-        "thumbBytes": 6680
-      },
-      {
-        "image": "assets/projects/guangzhou-villa/02.webp",
-        "thumb": "assets/projects/guangzhou-villa/02-thumb.webp",
-        "width": 1500,
-        "height": 973,
-        "bytes": 98848,
-        "thumbBytes": 16400
-      },
-      {
-        "image": "assets/projects/guangzhou-villa/03.webp",
-        "thumb": "assets/projects/guangzhou-villa/03-thumb.webp",
-        "width": 1500,
-        "height": 973,
-        "bytes": 85626,
-        "thumbBytes": 12914
-      },
-      {
-        "image": "assets/projects/guangzhou-villa/04.webp",
-        "thumb": "assets/projects/guangzhou-villa/04-thumb.webp",
-        "width": 1500,
-        "height": 973,
-        "bytes": 34926,
-        "thumbBytes": 5830
-      },
-      {
-        "image": "assets/projects/guangzhou-villa/05.webp",
-        "thumb": "assets/projects/guangzhou-villa/05-thumb.webp",
-        "width": 1500,
-        "height": 973,
-        "bytes": 53706,
-        "thumbBytes": 9932
-      },
-      {
-        "image": "assets/projects/guangzhou-villa/06.webp",
-        "thumb": "assets/projects/guangzhou-villa/06-thumb.webp",
-        "width": 1500,
-        "height": 973,
-        "bytes": 30634,
-        "thumbBytes": 5654
-      },
-      {
-        "image": "assets/projects/guangzhou-villa/07.webp",
-        "thumb": "assets/projects/guangzhou-villa/07-thumb.webp",
-        "width": 1500,
-        "height": 973,
-        "bytes": 53184,
-        "thumbBytes": 9726
-      },
-      {
-        "image": "assets/projects/guangzhou-villa/08.webp",
-        "thumb": "assets/projects/guangzhou-villa/08-thumb.webp",
-        "width": 1500,
-        "height": 973,
-        "bytes": 49458,
-        "thumbBytes": 10508
-      },
-      {
-        "image": "assets/projects/guangzhou-villa/09.webp",
-        "thumb": "assets/projects/guangzhou-villa/09-thumb.webp",
-        "width": 1500,
-        "height": 973,
-        "bytes": 59320,
-        "thumbBytes": 12036
-      }
+    id: "guangzhou-villa",
+    title: "Guangzhou Yunheshu Villa",
+    category: "Villa",
+    projectType: "Villa Interior / FF&E Development",
+    location: "Guangzhou, China",
+    status: "Design Development / FF&E Proposal",
+    scope: "Villa interior direction, FF&E concept, presentation refinement",
+    summary:
+      "A villa design package combining design development and soft furnishing direction for a layered residential client presentation.",
+    description:
+      "The villa package demonstrates design development, furniture direction, finish coordination, and visual storytelling for a private residential environment. Selected pages are presented as portfolio visuals rather than a complete public proposal deck.",
+    services: ["Villa interior", "FF&E concept", "Design development", "Presentation deck"],
+    tags: ["Design Development", "FF&E Proposal", "Visualization"],
+    cover: "assets/public/projects/guangzhou-villa/04.webp",
+    coverThumb: "assets/public/projects/guangzhou-villa/04-thumb.webp",
+    slides: [
+      { image: "assets/public/projects/guangzhou-villa/04.webp", thumb: "assets/public/projects/guangzhou-villa/04-thumb.webp", width: 1500, height: 676 },
+      { image: "assets/public/projects/guangzhou-villa/05.webp", thumb: "assets/public/projects/guangzhou-villa/05-thumb.webp", width: 1500, height: 676 },
+      { image: "assets/public/projects/guangzhou-villa/06.webp", thumb: "assets/public/projects/guangzhou-villa/06-thumb.webp", width: 1500, height: 676 },
+      { image: "assets/public/projects/guangzhou-villa/07.webp", thumb: "assets/public/projects/guangzhou-villa/07-thumb.webp", width: 1500, height: 676 },
+      { image: "assets/public/projects/guangzhou-villa/08.webp", thumb: "assets/public/projects/guangzhou-villa/08-thumb.webp", width: 1500, height: 676 },
+      { image: "assets/public/projects/guangzhou-villa/09.webp", thumb: "assets/public/projects/guangzhou-villa/09-thumb.webp", width: 1500, height: 676 }
     ]
   },
   {
-    "id": "riverfront-residence",
-    "title": "Riverfront Private Residence",
-    "type": "Private Residence / Soft Furnishing",
-    "location": "Shanghai, China",
-    "summary": "A 365 sqm private residence soft furnishing proposal with a calm luxury tone and client-facing visual storytelling.",
-    "services": [
-      "Soft furnishing",
-      "Residential styling",
-      "Client presentation",
-      "Visual direction"
-    ],
-    "cover": "assets/projects/riverfront-residence/03.webp",
-    "coverThumb": "assets/projects/riverfront-residence/03-thumb.webp",
-    "slides": [
-      {
-        "image": "assets/projects/riverfront-residence/01.webp",
-        "thumb": "assets/projects/riverfront-residence/01-thumb.webp",
-        "width": 1500,
-        "height": 848,
-        "bytes": 34006,
-        "thumbBytes": 5664
-      },
-      {
-        "image": "assets/projects/riverfront-residence/02.webp",
-        "thumb": "assets/projects/riverfront-residence/02-thumb.webp",
-        "width": 1500,
-        "height": 848,
-        "bytes": 70960,
-        "thumbBytes": 12370
-      },
-      {
-        "image": "assets/projects/riverfront-residence/03.webp",
-        "thumb": "assets/projects/riverfront-residence/03-thumb.webp",
-        "width": 1500,
-        "height": 848,
-        "bytes": 65700,
-        "thumbBytes": 12268
-      },
-      {
-        "image": "assets/projects/riverfront-residence/04.webp",
-        "thumb": "assets/projects/riverfront-residence/04-thumb.webp",
-        "width": 1500,
-        "height": 848,
-        "bytes": 41644,
-        "thumbBytes": 7812
-      },
-      {
-        "image": "assets/projects/riverfront-residence/05.webp",
-        "thumb": "assets/projects/riverfront-residence/05-thumb.webp",
-        "width": 1500,
-        "height": 848,
-        "bytes": 69916,
-        "thumbBytes": 14596
-      },
-      {
-        "image": "assets/projects/riverfront-residence/06.webp",
-        "thumb": "assets/projects/riverfront-residence/06-thumb.webp",
-        "width": 1500,
-        "height": 848,
-        "bytes": 21606,
-        "thumbBytes": 4180
-      },
-      {
-        "image": "assets/projects/riverfront-residence/07.webp",
-        "thumb": "assets/projects/riverfront-residence/07-thumb.webp",
-        "width": 1500,
-        "height": 848,
-        "bytes": 82132,
-        "thumbBytes": 15108
-      },
-      {
-        "image": "assets/projects/riverfront-residence/08.webp",
-        "thumb": "assets/projects/riverfront-residence/08-thumb.webp",
-        "width": 1500,
-        "height": 848,
-        "bytes": 61792,
-        "thumbBytes": 11204
-      }
+    id: "riverfront-residence",
+    title: "Riverfront Private Residence",
+    category: "Residential",
+    projectType: "Private Residence / Soft Furnishing",
+    location: "Shanghai, China",
+    status: "FF&E Proposal / Visualization",
+    scope: "Soft furnishing direction, residential styling, client presentation visuals",
+    summary:
+      "A 365 sqm private residence soft furnishing proposal with a calm luxury tone and client-facing visual storytelling.",
+    description:
+      "This private residence proposal focuses on atmosphere, furniture composition, and material storytelling. The selected visuals show how presentation images can help clients understand the intended lifestyle and spatial tone.",
+    services: ["Soft furnishing", "Residential styling", "Client presentation", "Visual direction"],
+    tags: ["FF&E Proposal", "Visualization", "Design Presentation"],
+    cover: "assets/public/projects/riverfront-residence/04.webp",
+    coverThumb: "assets/public/projects/riverfront-residence/04-thumb.webp",
+    heroCandidate: true,
+    slides: [
+      { image: "assets/public/projects/riverfront-residence/04.webp", thumb: "assets/public/projects/riverfront-residence/04-thumb.webp", width: 1500, height: 665 },
+      { image: "assets/public/projects/riverfront-residence/05.webp", thumb: "assets/public/projects/riverfront-residence/05-thumb.webp", width: 1500, height: 665 },
+      { image: "assets/public/projects/riverfront-residence/06.webp", thumb: "assets/public/projects/riverfront-residence/06-thumb.webp", width: 1500, height: 665 },
+      { image: "assets/public/projects/riverfront-residence/07.webp", thumb: "assets/public/projects/riverfront-residence/07-thumb.webp", width: 1500, height: 665 },
+      { image: "assets/public/projects/riverfront-residence/08.webp", thumb: "assets/public/projects/riverfront-residence/08-thumb.webp", width: 1500, height: 665 }
     ]
   },
   {
-    "id": "bank-office",
-    "title": "Bank of China Office Interior",
-    "type": "Corporate Office / Furniture Selection",
-    "location": "Nanjing, China",
-    "summary": "A corporate office interior and furniture selection package for a financial workplace environment.",
-    "services": [
-      "Office interior",
-      "Furniture selection",
-      "Workplace planning",
-      "Corporate presentation"
-    ],
-    "cover": "assets/projects/bank-office/02.webp",
-    "coverThumb": "assets/projects/bank-office/02-thumb.webp",
-    "slides": [
-      {
-        "image": "assets/projects/bank-office/01.webp",
-        "thumb": "assets/projects/bank-office/01-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 125296,
-        "thumbBytes": 23728
-      },
-      {
-        "image": "assets/projects/bank-office/02.webp",
-        "thumb": "assets/projects/bank-office/02-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 75308,
-        "thumbBytes": 14738
-      },
-      {
-        "image": "assets/projects/bank-office/03.webp",
-        "thumb": "assets/projects/bank-office/03-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 65414,
-        "thumbBytes": 13120
-      },
-      {
-        "image": "assets/projects/bank-office/04.webp",
-        "thumb": "assets/projects/bank-office/04-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 92686,
-        "thumbBytes": 17278
-      },
-      {
-        "image": "assets/projects/bank-office/05.webp",
-        "thumb": "assets/projects/bank-office/05-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 57210,
-        "thumbBytes": 11438
-      },
-      {
-        "image": "assets/projects/bank-office/06.webp",
-        "thumb": "assets/projects/bank-office/06-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 115304,
-        "thumbBytes": 19986
-      },
-      {
-        "image": "assets/projects/bank-office/07.webp",
-        "thumb": "assets/projects/bank-office/07-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 62510,
-        "thumbBytes": 13488
-      },
-      {
-        "image": "assets/projects/bank-office/08.webp",
-        "thumb": "assets/projects/bank-office/08-thumb.webp",
-        "width": 1500,
-        "height": 1062,
-        "bytes": 88382,
-        "thumbBytes": 16304
-      }
+    id: "bank-office",
+    title: "Financial Institution Office Interior",
+    category: "Workplace",
+    projectType: "Corporate Office / Furniture Selection",
+    location: "Nanjing, China",
+    status: "Interior Design Proposal / Visualization",
+    scope: "Workplace planning, office interior presentation, furniture selection",
+    summary:
+      "An anonymized corporate office interior and furniture selection package for a financial workplace environment.",
+    description:
+      "This workplace proposal is presented with a privacy-conscious project title. Selected visuals demonstrate office planning, furniture direction, and corporate presentation support without publishing sensitive client information.",
+    services: ["Office interior", "Furniture selection", "Workplace planning", "Corporate presentation"],
+    tags: ["Design Development", "Visualization", "FF&E Proposal"],
+    cover: "assets/public/projects/bank-office/02.webp",
+    coverThumb: "assets/public/projects/bank-office/02-thumb.webp",
+    slides: [
+      { image: "assets/public/projects/bank-office/02.webp", thumb: "assets/public/projects/bank-office/02-thumb.webp", width: 1500, height: 759 },
+      { image: "assets/public/projects/bank-office/03.webp", thumb: "assets/public/projects/bank-office/03-thumb.webp", width: 1500, height: 759 },
+      { image: "assets/public/projects/bank-office/05.webp", thumb: "assets/public/projects/bank-office/05-thumb.webp", width: 1500, height: 759 },
+      { image: "assets/public/projects/bank-office/06.webp", thumb: "assets/public/projects/bank-office/06-thumb.webp", width: 1500, height: 759 },
+      { image: "assets/public/projects/bank-office/07.webp", thumb: "assets/public/projects/bank-office/07-thumb.webp", width: 1500, height: 759 },
+      { image: "assets/public/projects/bank-office/08.webp", thumb: "assets/public/projects/bank-office/08-thumb.webp", width: 1500, height: 759 }
     ]
   }
 ];
 
 window.CONSTRUCTION_SETS = [
   {
-    "id": "interior-documentation",
-    "title": "26th Floor Interior Documentation",
-    "type": "Construction Drawing Set",
-    "scope": "Interior / CAD Documentation",
-    "location": "Confidential Office Renovation",
-    "summary": "An anonymized office renovation drawing package showing planning, partitions, reflected ceiling coordination, finish notes, and waterproofing-related documentation. Client names and title-block information are omitted from public previews.",
-    "services": [
-      "Interior construction drawings",
-      "CAD drafting",
-      "Drawing coordination",
-      "Privacy-safe PDF previews"
-    ],
-    "sheetCount": 17,
-    "cover": "assets/drawings/interior-documentation/02.webp",
-    "coverThumb": "assets/drawings/interior-documentation/02-thumb.webp",
-    "slides": [
-      {
-        "image": "assets/drawings/interior-documentation/01.webp",
-        "thumb": "assets/drawings/interior-documentation/01-thumb.webp"
-      },
-      {
-        "image": "assets/drawings/interior-documentation/02.webp",
-        "thumb": "assets/drawings/interior-documentation/02-thumb.webp"
-      },
-      {
-        "image": "assets/drawings/interior-documentation/03.webp",
-        "thumb": "assets/drawings/interior-documentation/03-thumb.webp"
-      },
-      {
-        "image": "assets/drawings/interior-documentation/04.webp",
-        "thumb": "assets/drawings/interior-documentation/04-thumb.webp"
-      }
+    id: "interior-documentation",
+    title: "26th Floor Interior Documentation",
+    category: "Technical",
+    projectType: "Interior Construction Drawing Set",
+    scope: "Interior / CAD Documentation",
+    location: "Confidential Office Renovation",
+    status: "Anonymized Drawing Preview",
+    summary:
+      "An anonymized office renovation drawing package showing planning, partitions, reflected ceiling coordination, finish notes, and waterproofing-related documentation.",
+    description:
+      "The public preview demonstrates drawing clarity and coordination logic while omitting client names, title blocks, and sensitive project identifiers. Original PDFs and DWG files are not published.",
+    technicalNote:
+      "Technical support may include CAD drawing production, interior layouts, reflected ceiling information, finish coordination, and drawing updates according to the confirmed scope.",
+    services: ["Interior construction drawings", "CAD drafting", "Drawing coordination", "Privacy-safe PDF previews"],
+    sheetCount: 17,
+    previewCount: 4,
+    cover: "assets/drawings/interior-documentation/02.webp",
+    coverThumb: "assets/drawings/interior-documentation/02-thumb.webp",
+    slides: [
+      { image: "assets/drawings/interior-documentation/01.webp", thumb: "assets/drawings/interior-documentation/01-thumb.webp", width: 1600, height: 1236 },
+      { image: "assets/drawings/interior-documentation/02.webp", thumb: "assets/drawings/interior-documentation/02-thumb.webp", width: 1600, height: 1236 },
+      { image: "assets/drawings/interior-documentation/03.webp", thumb: "assets/drawings/interior-documentation/03-thumb.webp", width: 1600, height: 1236 },
+      { image: "assets/drawings/interior-documentation/04.webp", thumb: "assets/drawings/interior-documentation/04-thumb.webp", width: 1600, height: 1236 }
     ]
   },
   {
-    "id": "elevation-details",
-    "title": "Elevation & Detail Drawings",
-    "type": "Construction Drawing Set",
-    "scope": "Elevations / Details",
-    "location": "Confidential Office Renovation",
-    "summary": "An anonymized documentation sample focused on interior elevations, dimensions, material callouts, section logic, and construction-detail communication for contractor review.",
-    "services": [
-      "Interior elevations",
-      "Detail drawings",
-      "Material callouts",
-      "Contractor-ready documentation"
-    ],
-    "sheetCount": 20,
-    "cover": "assets/drawings/elevation-details/02.webp",
-    "coverThumb": "assets/drawings/elevation-details/02-thumb.webp",
-    "slides": [
-      {
-        "image": "assets/drawings/elevation-details/01.webp",
-        "thumb": "assets/drawings/elevation-details/01-thumb.webp"
-      },
-      {
-        "image": "assets/drawings/elevation-details/02.webp",
-        "thumb": "assets/drawings/elevation-details/02-thumb.webp"
-      },
-      {
-        "image": "assets/drawings/elevation-details/03.webp",
-        "thumb": "assets/drawings/elevation-details/03-thumb.webp"
-      },
-      {
-        "image": "assets/drawings/elevation-details/04.webp",
-        "thumb": "assets/drawings/elevation-details/04-thumb.webp"
-      }
+    id: "elevation-details",
+    title: "Elevation & Detail Drawings",
+    category: "Technical",
+    projectType: "Elevation and Detail Drawing Set",
+    scope: "Elevations / Details",
+    location: "Confidential Office Renovation",
+    status: "Anonymized Drawing Preview",
+    summary:
+      "An anonymized documentation sample focused on interior elevations, dimensions, material callouts, section logic, and construction-detail communication.",
+    description:
+      "Selected pages show how elevations and details can communicate dimensions, finishes, junctions, and coordination information for contractor review. Sensitive project data is removed from the public preview.",
+    technicalNote:
+      "Technical support may include interior elevations, material callouts, detail development, sheet organization, and drawing coordination. Local professional stamping or permit approval is not represented.",
+    services: ["Interior elevations", "Detail drawings", "Material callouts", "Contractor-ready documentation"],
+    sheetCount: 20,
+    previewCount: 4,
+    cover: "assets/drawings/elevation-details/02.webp",
+    coverThumb: "assets/drawings/elevation-details/02-thumb.webp",
+    slides: [
+      { image: "assets/drawings/elevation-details/01.webp", thumb: "assets/drawings/elevation-details/01-thumb.webp", width: 1600, height: 1236 },
+      { image: "assets/drawings/elevation-details/02.webp", thumb: "assets/drawings/elevation-details/02-thumb.webp", width: 1600, height: 1236 },
+      { image: "assets/drawings/elevation-details/03.webp", thumb: "assets/drawings/elevation-details/03-thumb.webp", width: 1600, height: 1236 },
+      { image: "assets/drawings/elevation-details/04.webp", thumb: "assets/drawings/elevation-details/04-thumb.webp", width: 1600, height: 1236 }
     ]
   },
   {
-    "id": "electrical-coordination",
-    "title": "Electrical Coordination Drawings",
-    "type": "Construction Drawing Set",
-    "scope": "Electrical / MEP Coordination",
-    "location": "Confidential Office Renovation",
-    "summary": "An anonymized electrical coordination sample covering power, lighting, communication, security, and low-voltage layout coordination for interior renovation projects.",
-    "services": [
-      "Electrical layouts",
-      "Lighting coordination",
-      "Low-voltage planning",
-      "MEP drawing support"
-    ],
-    "sheetCount": 13,
-    "cover": "assets/drawings/electrical-coordination/03.webp",
-    "coverThumb": "assets/drawings/electrical-coordination/03-thumb.webp",
-    "slides": [
-      {
-        "image": "assets/drawings/electrical-coordination/01.webp",
-        "thumb": "assets/drawings/electrical-coordination/01-thumb.webp"
-      },
-      {
-        "image": "assets/drawings/electrical-coordination/02.webp",
-        "thumb": "assets/drawings/electrical-coordination/02-thumb.webp"
-      },
-      {
-        "image": "assets/drawings/electrical-coordination/03.webp",
-        "thumb": "assets/drawings/electrical-coordination/03-thumb.webp"
-      },
-      {
-        "image": "assets/drawings/electrical-coordination/04.webp",
-        "thumb": "assets/drawings/electrical-coordination/04-thumb.webp"
-      }
+    id: "electrical-coordination",
+    title: "Electrical Coordination Drawings",
+    category: "Technical",
+    projectType: "Electrical Coordination Drawing Set",
+    scope: "Electrical / MEP Coordination",
+    location: "Confidential Office Renovation",
+    status: "Anonymized Drawing Preview",
+    summary:
+      "An anonymized electrical coordination sample covering power, lighting, communication, security, and low-voltage layout coordination for interior renovation projects.",
+    description:
+      "The preview demonstrates coordination drawing support for interior renovation documentation. Public images are privacy-safe samples only and do not present licensed engineering certification.",
+    technicalNote:
+      "Technical support may include layout coordination, lighting and power plan updates, low-voltage drawing organization, and drawing revision support based on supplied project information.",
+    services: ["Electrical layouts", "Lighting coordination", "Low-voltage planning", "MEP drawing support"],
+    sheetCount: 13,
+    previewCount: 4,
+    cover: "assets/drawings/electrical-coordination/03.webp",
+    coverThumb: "assets/drawings/electrical-coordination/03-thumb.webp",
+    slides: [
+      { image: "assets/drawings/electrical-coordination/01.webp", thumb: "assets/drawings/electrical-coordination/01-thumb.webp", width: 1600, height: 1236 },
+      { image: "assets/drawings/electrical-coordination/02.webp", thumb: "assets/drawings/electrical-coordination/02-thumb.webp", width: 1600, height: 1236 },
+      { image: "assets/drawings/electrical-coordination/03.webp", thumb: "assets/drawings/electrical-coordination/03-thumb.webp", width: 1600, height: 1236 },
+      { image: "assets/drawings/electrical-coordination/04.webp", thumb: "assets/drawings/electrical-coordination/04-thumb.webp", width: 1600, height: 1236 }
     ]
   }
 ];

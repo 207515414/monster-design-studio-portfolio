@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://207515414.github.io/monster-design-studio-portfolio/sitemap.xml
