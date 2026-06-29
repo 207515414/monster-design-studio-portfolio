@@ -1,5 +1,45 @@
 window.PORTFOLIO_PROJECTS = [
   {
+    id: "commercial-hotel-visualization",
+    title: "Commercial Hotel Interior Visualization",
+    category: "Hospitality",
+    projectType: "Commercial Hotel / Hospitality Visualization",
+    location: "International / Confidential",
+    status: "Concept Visualization / Portfolio Preview",
+    scope: "Hotel lobby, guestroom, restaurant, bar, wellness, corridor and exterior visualization",
+    summary:
+      "A commercial hotel visualization series presenting luxury hospitality interiors, amenity spaces and guest experience scenes for client-facing project communication.",
+    description:
+      "This hospitality portfolio set presents selected hotel concept visuals across public areas, guestrooms, dining spaces, wellness amenities, circulation areas and exterior arrival scenes. Images are prepared as portfolio previews for commercial design conversations; complete source files and confidential proposal materials are not published.",
+    services: ["Hotel interior", "Hospitality visualization", "Commercial design", "Client presentation"],
+    tags: ["Hospitality", "Commercial Interior", "3D Visualization"],
+    cover: "assets/public/projects/commercial-hotel-visualization/01.webp",
+    coverThumb: "assets/public/projects/commercial-hotel-visualization/01-thumb.webp",
+    featured: true,
+    slides: [
+      { image: "assets/public/projects/commercial-hotel-visualization/01.webp", thumb: "assets/public/projects/commercial-hotel-visualization/01-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/02.webp", thumb: "assets/public/projects/commercial-hotel-visualization/02-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/03.webp", thumb: "assets/public/projects/commercial-hotel-visualization/03-thumb.webp", width: 1500, height: 1240 },
+      { image: "assets/public/projects/commercial-hotel-visualization/04.webp", thumb: "assets/public/projects/commercial-hotel-visualization/04-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/05.webp", thumb: "assets/public/projects/commercial-hotel-visualization/05-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/06.webp", thumb: "assets/public/projects/commercial-hotel-visualization/06-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/07.webp", thumb: "assets/public/projects/commercial-hotel-visualization/07-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/08.webp", thumb: "assets/public/projects/commercial-hotel-visualization/08-thumb.webp", width: 1500, height: 1240 },
+      { image: "assets/public/projects/commercial-hotel-visualization/09.webp", thumb: "assets/public/projects/commercial-hotel-visualization/09-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/10.webp", thumb: "assets/public/projects/commercial-hotel-visualization/10-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/11.webp", thumb: "assets/public/projects/commercial-hotel-visualization/11-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/12.webp", thumb: "assets/public/projects/commercial-hotel-visualization/12-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/13.webp", thumb: "assets/public/projects/commercial-hotel-visualization/13-thumb.webp", width: 1500, height: 1240 },
+      { image: "assets/public/projects/commercial-hotel-visualization/14.webp", thumb: "assets/public/projects/commercial-hotel-visualization/14-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/15.webp", thumb: "assets/public/projects/commercial-hotel-visualization/15-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/16.webp", thumb: "assets/public/projects/commercial-hotel-visualization/16-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/17.webp", thumb: "assets/public/projects/commercial-hotel-visualization/17-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/18.webp", thumb: "assets/public/projects/commercial-hotel-visualization/18-thumb.webp", width: 1500, height: 1240 },
+      { image: "assets/public/projects/commercial-hotel-visualization/19.webp", thumb: "assets/public/projects/commercial-hotel-visualization/19-thumb.webp", width: 1500, height: 1244 },
+      { image: "assets/public/projects/commercial-hotel-visualization/20.webp", thumb: "assets/public/projects/commercial-hotel-visualization/20-thumb.webp", width: 1500, height: 1244 }
+    ]
+  },
+  {
     id: "shanghai-duplex",
     title: "Shanghai Duplex Luxury Residence",
     category: "Residential",
