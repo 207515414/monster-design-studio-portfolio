@@ -1,0 +1,32 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+out/
+coverage/
+.next/
+.cache/
+.parcel-cache/
+
+# Local exports and temporary files
+tmp/
+temp/
+exports/
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Common design-source artifacts that should stay out of Git
+*.psd
+*.ai
+*.sketch
+*.fig
+*.xd

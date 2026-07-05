@@ -41,6 +41,7 @@ http://localhost:8080
 - Original PPT/PPTX files are not included.
 - Original PDF/DWG drawing files are not included.
 - The site uses cropped public preview images under `assets/public` and privacy-safe construction drawing previews.
+- Keep generated exports, caches, temporary folders, and local editor files out of Git. Use the ignored `tmp/` or `exports/` folders if you need scratch space.
 - Construction drawing title blocks, client names, and project identifiers are omitted from public preview images.
 - The logo is an original geometric mark designed to avoid monster-claw, animal, and famous-brand visual references. Formal trademark use still requires a proper trademark search in the target countries.
 - If a client project is confidential, remove its public preview folder under `assets/public/projects` and delete the matching project object in `assets/data.js`.
