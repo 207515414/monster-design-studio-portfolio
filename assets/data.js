@@ -1,18 +1,18 @@
 window.PORTFOLIO_PROJECTS = [
   {
     id: "commercial-hotel-visualization",
-    title: "Commercial Hotel Interior Visualization",
+    title: "Commercial Hotel Interior Visualization Support",
     category: "Hospitality",
     projectType: "Commercial Hotel / Hospitality Visualization",
     location: "International / Confidential",
     status: "Concept Visualization / Portfolio Preview",
-    scope: "Hotel lobby, guestroom, restaurant, bar, wellness, corridor and exterior visualization",
+    scope: "Hospitality proposal visualization for lobbies, guestrooms, dining, wellness, circulation and arrival areas",
     summary:
-      "A commercial hotel visualization series presenting luxury hospitality interiors, amenity spaces and guest experience scenes for client-facing project communication.",
+      "Hospitality proposal visuals that help design teams communicate spatial intent, material atmosphere and guest experience during design development and client reviews.",
     description:
-      "This hospitality portfolio set presents selected hotel concept visuals across public areas, guestrooms, dining spaces, wellness amenities, circulation areas and exterior arrival scenes. Images are prepared as portfolio previews for commercial design conversations; complete source files and confidential proposal materials are not published.",
-    services: ["Hotel interior", "Hospitality visualization", "Commercial design", "Client presentation"],
-    tags: ["Hospitality", "Commercial Interior", "3D Visualization"],
+      "This concept visualization series supports hospitality proposals and client communication across public areas, guestrooms, dining spaces, wellness amenities, circulation areas and exterior arrival scenes. The images are portfolio previews of concept-stage production support; complete source files and confidential proposal materials are not published.",
+    services: ["Hospitality proposal visuals", "Interior visualization", "Design development support", "Client presentation support"],
+    tags: ["Hospitality", "Proposal Visualization", "Production Support"],
     cover: "assets/public/projects/commercial-hotel-visualization/01.webp",
     coverThumb: "assets/public/projects/commercial-hotel-visualization/01-thumb.webp",
     featured: true,
@@ -41,18 +41,18 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: "shanghai-duplex",
-    title: "Shanghai Duplex Luxury Residence",
+    title: "Luxury Residential Visualization Package",
     category: "Residential",
     projectType: "Luxury Residential / Duplex Interior",
     location: "Shanghai, China",
     status: "Concept Design / Visualization",
-    scope: "Interior visualization, concept presentation, material mood direction",
+    scope: "Residential visualization, material mood direction and presentation support",
     summary:
-      "A high-end duplex residence presentation focused on refined spatial sequencing, material atmosphere, and premium interior visualization.",
+      "A luxury residential visualization package that helps project teams communicate spatial sequencing, material atmosphere and interior direction during design development.",
     description:
-      "This residential presentation explores a layered interior atmosphere through spatial views, material direction, and client-facing visuals. The public portfolio shows selected presentation images only; full proposal materials are not published.",
-    services: ["Interior visualization", "Concept presentation", "Material mood", "Luxury residence"],
-    tags: ["Concept Design", "Visualization", "Design Development"],
+      "This duplex residence presentation uses spatial views, material direction and client-facing visuals to support design reviews and proposal communication. The public portfolio shows selected presentation images only; full proposal materials are not published.",
+    services: ["Residential visualization", "Material mood direction", "Design development support", "Presentation production"],
+    tags: ["Residential Visualization", "Design Development", "Presentation Support"],
     cover: "assets/public/projects/shanghai-duplex/05.webp",
     coverThumb: "assets/public/projects/shanghai-duplex/05-thumb.webp",
     featured: true,
@@ -70,18 +70,18 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: "guangzhou-villa",
-    title: "Guangzhou Yunheshu Villa",
+    title: "Villa FF&E & Presentation Support",
     category: "Villa",
     projectType: "Villa Interior / FF&E Development",
     location: "Guangzhou, China",
     status: "Design Development / FF&E Proposal",
-    scope: "Villa interior direction, FF&E concept, presentation refinement",
+    scope: "Villa FF&E direction, design development and presentation refinement",
     summary:
-      "A villa design package combining design development and soft furnishing direction for a layered residential client presentation.",
+      "A villa FF&E and presentation package that supports furniture, finish and atmosphere decisions during residential design development.",
     description:
-      "The villa package demonstrates design development, furniture direction, finish coordination, and visual storytelling for a private residential environment. Selected pages are presented as portfolio visuals rather than a complete public proposal deck.",
-    services: ["Villa interior", "FF&E concept", "Design development", "Presentation deck"],
-    tags: ["Design Development", "FF&E Proposal", "Visualization"],
+      "This villa package combines furniture direction, finish coordination and visual storytelling to help project teams prepare client presentations and refine the interior concept. Selected pages are presented as portfolio visuals rather than a complete public proposal deck.",
+    services: ["FF&E presentation support", "Furniture and finish direction", "Design development support", "Client presentation production"],
+    tags: ["FF&E Proposal", "Design Development", "Presentation Support"],
     cover: "assets/public/projects/guangzhou-villa/04.webp",
     coverThumb: "assets/public/projects/guangzhou-villa/04-thumb.webp",
     slides: [
@@ -95,18 +95,18 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: "riverfront-residence",
-    title: "Riverfront Private Residence",
+    title: "Private Residence FF&E Presentation",
     category: "Residential",
     projectType: "Private Residence / Soft Furnishing",
     location: "Shanghai, China",
     status: "FF&E Proposal / Visualization",
-    scope: "Soft furnishing direction, residential styling, client presentation visuals",
+    scope: "Private residence FF&E direction, styling and client presentation visuals",
     summary:
-      "A 365 sqm private residence soft furnishing proposal with a calm luxury tone and client-facing visual storytelling.",
+      "A 365 sqm private residence FF&E presentation using furniture, material and styling direction to support client communication.",
     description:
-      "This private residence proposal focuses on atmosphere, furniture composition, and material storytelling. The selected visuals show how presentation images can help clients understand the intended lifestyle and spatial tone.",
-    services: ["Soft furnishing", "Residential styling", "Client presentation", "Visual direction"],
-    tags: ["FF&E Proposal", "Visualization", "Design Presentation"],
+      "This proposal focuses on atmosphere, furniture composition and material storytelling during FF&E development. The selected visuals show how presentation production can help clients understand the intended lifestyle and spatial tone.",
+    services: ["FF&E presentation", "Residential styling", "Client communication support", "Visual direction"],
+    tags: ["FF&E Proposal", "Client Presentation", "Production Support"],
     cover: "assets/public/projects/riverfront-residence/04.webp",
     coverThumb: "assets/public/projects/riverfront-residence/04-thumb.webp",
     heroCandidate: true,
@@ -120,18 +120,18 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: "bank-office",
-    title: "Financial Institution Office Interior",
+    title: "Workplace Interior & Furniture Presentation",
     category: "Workplace",
     projectType: "Corporate Office / Furniture Selection",
     location: "Nanjing, China",
     status: "Interior Design Proposal / Visualization",
-    scope: "Workplace planning, office interior presentation, furniture selection",
+    scope: "Workplace planning, furniture direction and presentation support",
     summary:
-      "An anonymized corporate office interior and furniture selection package for a financial workplace environment.",
+      "An anonymized workplace planning and furniture presentation package developed to support interior proposals and client reviews.",
     description:
-      "This workplace proposal is presented with a privacy-conscious project title. Selected visuals demonstrate office planning, furniture direction, and corporate presentation support without publishing sensitive client information.",
-    services: ["Office interior", "Furniture selection", "Workplace planning", "Corporate presentation"],
-    tags: ["Design Development", "Visualization", "FF&E Proposal"],
+      "This workplace proposal uses a privacy-conscious project title. Selected visuals show how office planning, furniture direction and presentation production can support design development and client communication without publishing sensitive client information.",
+    services: ["Workplace planning", "Furniture presentation", "Design development support", "Client presentation production"],
+    tags: ["Workplace Planning", "Furniture Presentation", "Production Support"],
     cover: "assets/public/projects/bank-office/02.webp",
     coverThumb: "assets/public/projects/bank-office/02-thumb.webp",
     slides: [
@@ -148,19 +148,19 @@ window.PORTFOLIO_PROJECTS = [
 window.CONSTRUCTION_SETS = [
   {
     id: "interior-documentation",
-    title: "26th Floor Interior Documentation",
+    title: "Interior CAD Documentation Support",
     category: "Technical",
     projectType: "Interior Construction Drawing Set",
-    scope: "Interior / CAD Documentation",
+    scope: "Interior Layouts / CAD Documentation / Drawing Coordination",
     location: "Confidential Office Renovation",
     status: "Anonymized Drawing Preview",
     summary:
-      "An anonymized office renovation drawing package showing planning, partitions, reflected ceiling coordination, finish notes, and waterproofing-related documentation.",
+      "Anonymized production samples showing interior layouts, partitions, reflected ceiling coordination, finish notes and waterproofing-related documentation based on supplied project information.",
     description:
-      "The public preview demonstrates drawing clarity and coordination logic while omitting client names, title blocks, and sensitive project identifiers. Original PDFs and DWG files are not published.",
+      "The public preview demonstrates how CAD production support can develop layouts and drawing coordination materials while omitting client names, title blocks and sensitive project identifiers. Original PDFs and DWG files are not published.",
     technicalNote:
-      "Technical support may include CAD drawing production, interior layouts, reflected ceiling information, finish coordination, and drawing updates according to the confirmed scope.",
-    services: ["Interior construction drawings", "CAD drafting", "Drawing coordination", "Privacy-safe PDF previews"],
+      "Support may include CAD production, interior layouts, reflected ceiling information, finish coordination and drawing updates based on supplied project information. The service does not include local professional certification, statutory approval or stamping.",
+    services: ["Interior layout development", "CAD documentation support", "Drawing coordination", "Anonymized PDF previews"],
     sheetCount: 17,
     previewCount: 4,
     cover: "assets/drawings/interior-documentation/02.webp",
@@ -174,19 +174,19 @@ window.CONSTRUCTION_SETS = [
   },
   {
     id: "elevation-details",
-    title: "Elevation & Detail Drawings",
+    title: "Interior Elevation & Detail Development",
     category: "Technical",
     projectType: "Elevation and Detail Drawing Set",
-    scope: "Elevations / Details",
+    scope: "Interior Elevations / Details / Drawing Coordination",
     location: "Confidential Office Renovation",
     status: "Anonymized Drawing Preview",
     summary:
-      "An anonymized documentation sample focused on interior elevations, dimensions, material callouts, section logic, and construction-detail communication.",
+      "Anonymized production samples focused on interior elevations, dimensions, material callouts, section logic and detail development based on supplied project information.",
     description:
-      "Selected pages show how elevations and details can communicate dimensions, finishes, junctions, and coordination information for contractor review. Sensitive project data is removed from the public preview.",
+      "Selected pages show how production support can develop elevations and details for dimensions, finishes, junctions and drawing coordination. Sensitive project data is removed from the public preview.",
     technicalNote:
-      "Technical support may include interior elevations, material callouts, detail development, sheet organization, and drawing coordination. Local professional stamping or permit approval is not represented.",
-    services: ["Interior elevations", "Detail drawings", "Material callouts", "Contractor-ready documentation"],
+      "Support may include interior elevations, material callouts, detail development, sheet organization and drawing coordination based on supplied project information. The service does not include local professional certification, statutory approval or stamping.",
+    services: ["Interior elevations", "Detail development", "Material callouts", "Detail communication for contractor review"],
     sheetCount: 20,
     previewCount: 4,
     cover: "assets/drawings/elevation-details/02.webp",
@@ -200,19 +200,19 @@ window.CONSTRUCTION_SETS = [
   },
   {
     id: "electrical-coordination",
-    title: "Electrical Coordination Drawings",
+    title: "Electrical & Low-Voltage Drawing Coordination",
     category: "Technical",
     projectType: "Electrical Coordination Drawing Set",
-    scope: "Electrical / MEP Coordination",
+    scope: "Electrical / Low-Voltage / Drawing Coordination",
     location: "Confidential Office Renovation",
     status: "Anonymized Drawing Preview",
     summary:
-      "An anonymized electrical coordination sample covering power, lighting, communication, security, and low-voltage layout coordination for interior renovation projects.",
+      "Anonymized production samples covering power, lighting, communication, security and low-voltage layouts based on supplied project information.",
     description:
-      "The preview demonstrates coordination drawing support for interior renovation documentation. Public images are privacy-safe samples only and do not present licensed engineering certification.",
+      "The preview shows how production support can organize electrical and low-voltage layouts for drawing coordination. Public images are privacy-safe samples with sensitive project information removed.",
     technicalNote:
-      "Technical support may include layout coordination, lighting and power plan updates, low-voltage drawing organization, and drawing revision support based on supplied project information.",
-    services: ["Electrical layouts", "Lighting coordination", "Low-voltage planning", "MEP drawing support"],
+      "Support may include layout coordination, lighting and power plan updates, low-voltage drawing organization and drawing revisions based on supplied project information. The service does not include local professional certification, statutory approval or stamping.",
+    services: ["Electrical layout coordination", "Lighting and power updates", "Low-voltage drawing organization", "Drawing revision support"],
     sheetCount: 13,
     previewCount: 4,
     cover: "assets/drawings/electrical-coordination/03.webp",
@@ -225,3 +225,4 @@ window.CONSTRUCTION_SETS = [
     ]
   }
 ];
+
