@@ -285,6 +285,12 @@ function observeReveals() {
 
 closeButton?.addEventListener("click", closeProject);
 nextProjectButton?.addEventListener("click", openNextItem);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && dialog?.open) {
+    event.preventDefault();
+    closeProject();
+  }
+});
 dialog?.addEventListener("click", (event) => {
   if (event.target === dialog) closeProject();
 });
@@ -304,3 +310,4 @@ renderDrawingCards();
 bindFilters();
 bindMobileNav();
 observeReveals();
+
