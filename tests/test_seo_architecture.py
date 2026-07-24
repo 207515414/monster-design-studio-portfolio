@@ -89,7 +89,7 @@ class SeoArchitectureTests(unittest.TestCase):
             for href in re.findall(r'''href=["']([^"']+)["']''', page, re.I):
                 if href.startswith(("http", "mailto:", "tel:", "#")):
                     continue
-                target = href.split("#", 1)[0]
+                target = href.split("#", 1)[0].split("?", 1)[0]
                 if not target:
                     continue
                 resolved = (ROOT / target.lstrip("/")).resolve() if target.startswith("/") else (path.parent / target).resolve()
@@ -112,7 +112,7 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertIn('hreflang="x-default" href="https://monster-cg.com/"', english)
         self.assertIn('lang="ar" dir="rtl"', arabic)
         self.assertIn('href="/ar-ae/privacy-policy/"', arabic)
-        self.assertIn('href="../styles.css"', arabic)
+        self.assertIn('href="../styles.css?v=', arabic)
         self.assertIn('src="../assets/brand/logo-mark.svg"', arabic)
 
     def test_sitemap_includes_english_and_uae_arabic_entry_points(self):
