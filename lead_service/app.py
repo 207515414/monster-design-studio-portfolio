@@ -71,9 +71,15 @@ class LeadStore:
     def __init__(self, database_path: str):
         self.database_path = database_path
         self._lock = threading.Lock()
+        self._memory_connection: sqlite3.Connection | None = None
+        if database_path == ":memory:":
+            self._memory_connection = sqlite3.connect(database_path, check_same_thread=False)
+            self._memory_connection.row_factory = sqlite3.Row
         self._initialize()
 
     def _connect(self) -> sqlite3.Connection:
+        if self._memory_connection is not None:
+            return self._memory_connection
         connection = sqlite3.connect(self.database_path)
         connection.row_factory = sqlite3.Row
         return connection
