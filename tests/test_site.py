@@ -149,6 +149,31 @@ class SitePositioningTests(unittest.TestCase):
             r'event\.key\s*===\s*"Escape"\s*&&\s*dialog\?\.open[\s\S]*?closeProject\(\);',
         )
 
+    def test_homepage_uses_conversion_positioning_and_separate_portfolio_link(self):
+        self.assertIn(
+            "Architectural Visualization &amp; 3D Rendering for Global Design Teams",
+            INDEX,
+        )
+        self.assertIn("architectural visualization services", INDEX.lower())
+        self.assertIn("outsource CAD drafting services", INDEX.lower())
+        self.assertIn('href="/portfolio/"', INDEX)
+        self.assertIn('href="/privacy-policy/"', INDEX)
+
+    def test_homepage_does_not_invent_scale_or_client_proof(self):
+        lower = INDEX.lower()
+        for phrase in (
+            "trusted by",
+            "projects completed",
+            "years of experience",
+            "client logos",
+            "founded in",
+        ):
+            self.assertNotIn(phrase, lower)
+
+    def test_homepage_exposes_trackable_inquiry_actions(self):
+        self.assertIn('data-track="project-brief"', INDEX)
+        self.assertIn('data-track="whatsapp-inquiry"', INDEX)
+
 
 if __name__ == "__main__":
     unittest.main()

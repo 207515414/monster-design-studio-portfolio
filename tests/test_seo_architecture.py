@@ -100,6 +100,19 @@ class SeoArchitectureTests(unittest.TestCase):
         for forbidden in ("licensed architectural services", "permit approval"):
             self.assertNotIn(forbidden, combined)
 
+    def test_uae_arabic_homepage_has_reciprocal_alternates_and_privacy_link(self):
+        english = (ROOT / "index.html").read_text(encoding="utf-8")
+        arabic_path = ROOT / "ar-ae/index.html"
+        self.assertTrue(arabic_path.is_file(), arabic_path)
+        if not arabic_path.is_file():
+            return
+        arabic = arabic_path.read_text(encoding="utf-8")
+        self.assertIn('hreflang="ar-AE" href="https://monster-cg.com/ar-ae/"', english)
+        self.assertIn('hreflang="en" href="https://monster-cg.com/"', arabic)
+        self.assertIn('hreflang="x-default" href="https://monster-cg.com/"', english)
+        self.assertIn('lang="ar" dir="rtl"', arabic)
+        self.assertIn('href="/ar-ae/privacy-policy/"', arabic)
+
 
 if __name__ == "__main__":
     unittest.main()
