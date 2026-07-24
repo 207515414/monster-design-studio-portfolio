@@ -209,6 +209,13 @@ a {
   z-index: 1;
 }
 
+/* The primary proposition must remain immediately readable, including on a
+   slow first paint before the reveal observer has fired. */
+.hero-content.reveal {
+  opacity: 1;
+  transform: none;
+}
+
 .eyebrow,
 .section-label {
   color: var(--accent);
