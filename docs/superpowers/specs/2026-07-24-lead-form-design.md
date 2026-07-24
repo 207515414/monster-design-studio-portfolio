@@ -24,7 +24,7 @@ Use a self-hosted, low-resource lead service on the existing VPS. Nginx continue
 
 ## Technical boundaries
 
-- The application uses Node.js with the built-in HTTP and SQLite capabilities only; no Docker, database server, or large framework is introduced.
+- The application uses Python 3 standard-library HTTP, SMTP, and SQLite capabilities only; no Docker, database server, or large framework is introduced.
 - It is run by `systemd` as a dedicated non-root service and listens only on `127.0.0.1`.
 - `/admin/leads` is protected by an owner-set password hash, and API responses use `Cache-Control: no-store`.
 - Add a honeypot, request-size cap, rate limit, and Cloudflare Turnstile before public release.
