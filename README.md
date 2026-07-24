@@ -1,48 +1,46 @@
-# Monster Design Studio Portfolio Site
+# Monster CG Website
 
-Static portfolio website for Monster Design Studio: commercial interior design, visualization, FF&E direction, CAD drafting support, technical documentation, and anonymized construction drawing previews.
+Static, multi-page marketing site for Monster CG. It uses only HTML, CSS and vanilla JavaScript, so GitHub Pages can publish it without a build server.
 
-## Contact
+## Production configuration
 
-- Brand: Monster Design Studio
-- WhatsApp: +86 190 3505 7372
-- Email: zhangzheng270@gmail.com
-- Logo: original geometric mark in `assets/brand/logo-mark.svg`; horizontal version in `assets/brand/logo-horizontal.svg`
-- Privacy Policy: `privacy-policy.html`
-- SEO files: `robots.txt` and `sitemap.xml`
+- Canonical domain: `https://monster-cg.com`
+- Custom-domain file: `CNAME` containing `monster-cg.com`
+- GitHub Pages marker: `.nojekyll`
+- Search verification file: `google21cc5db03d0ba754.html`
+- Crawl controls: `robots.txt` and `sitemap.xml`
 
-## Preview Locally
+## Publish to GitHub Pages
 
-Open `index.html` directly in a browser, or run a local server:
+1. Commit and push this repository's `main` branch.
+2. In GitHub, open **Settings → Pages** and select **Deploy from a branch**, then choose `main` and `/ (root)`.
+3. Confirm the custom domain is `monster-cg.com` and enable **Enforce HTTPS** after the certificate is available.
+4. Do not delete `CNAME`, `.nojekyll`, the Google verification file, portfolio assets or contact links when publishing.
+5. Wait for the Pages deployment to finish, then verify these production URLs return the expected page:
+   - `https://monster-cg.com/`
+   - `https://monster-cg.com/services/`
+   - `https://monster-cg.com/portfolio/`
+   - `https://monster-cg.com/robots.txt`
+   - `https://monster-cg.com/sitemap.xml`
+   - `https://monster-cg.com/404.html`
 
-```bash
-python -m http.server 8080
-```
+## Search Console handoff
 
-Then open:
+1. Verify the `monster-cg.com` domain property.
+2. Submit `https://monster-cg.com/sitemap.xml`.
+3. Use URL Inspection for the home page, `/services/`, the six service pages and selected portfolio pages.
+4. Request indexing only after checking that production canonical URLs match the sitemap.
+5. Review Page Indexing, Core Web Vitals, HTTPS and Mobile Usability reports after Google has crawled the deployment.
+
+## Local verification
+
+Run these before publishing:
 
 ```text
-http://localhost:8080
+py -3 -m unittest discover -s tests -p "test_*.py" -v
+node --check script.js
+node --check assets/data.js
+git diff --check
 ```
 
-## Deploy to GitHub Pages
-
-1. Create a new GitHub repository.
-2. Upload everything inside this `portfolio-site` folder to the repository root.
-3. Go to `Settings` -> `Pages`.
-4. Under `Build and deployment`, choose:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/root`
-5. Save and wait for GitHub Pages to publish the URL.
-
-## Notes
-
-- Original PPT/PPTX files are not included.
-- Original PDF/DWG drawing files are not included.
-- The site uses cropped public preview images under `assets/public` and privacy-safe construction drawing previews.
-- Construction drawing title blocks, client names, and project identifiers are omitted from public preview images.
-- The logo is an original geometric mark designed to avoid monster-claw, animal, and famous-brand visual references. Formal trademark use still requires a proper trademark search in the target countries.
-- If a client project is confidential, remove its public preview folder under `assets/public/projects` and delete the matching project object in `assets/data.js`.
-- If a construction drawing set is confidential, remove its folder under `assets/drawings` and delete the matching object in `window.CONSTRUCTION_SETS` in `assets/data.js`.
-- For overseas B2B use, send clients the GitHub Pages URL together with a short message and ask them to send one plan, sketch, or reference image for quotation.
+The site intentionally uses Email and WhatsApp rather than a form that falsely claims to submit data. Monster CG provides remote visualization, drafting and technical-documentation production support; it does not provide local approvals, professional stamping or engineering certification.

@@ -14,10 +14,10 @@ SCRIPT = (ROOT / "script.js").read_text(encoding="utf-8")
 class SitePositioningTests(unittest.TestCase):
     def test_hero_states_b2b_remote_production_positioning(self):
         self.assertIn(
-            "Remote CAD drafting and visualization support for busy design teams.",
+            "Monster CG | Architectural Visualization & 3D Rendering Studio.",
             INDEX,
         )
-        self.assertIn("overseas interior design studios, architects and fit-out contractors", INDEX)
+        self.assertIn("architects, interior designers and real estate developers worldwide", INDEX)
         self.assertNotIn("Commercial interiors, visualized and delivered with precision.", INDEX)
 
     def test_technical_service_and_portfolio_come_first(self):
