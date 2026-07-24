@@ -311,3 +311,9 @@ bindFilters();
 bindMobileNav();
 observeReveals();
 
+document.querySelectorAll("[data-track]").forEach((link) => {
+  link.addEventListener("click", () => {
+    document.documentElement.dataset.lastCta = link.dataset.track;
+  });
+});
+

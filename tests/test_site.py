@@ -14,26 +14,23 @@ SCRIPT = (ROOT / "script.js").read_text(encoding="utf-8")
 class SitePositioningTests(unittest.TestCase):
     def test_hero_states_b2b_remote_production_positioning(self):
         self.assertIn(
-            "Monster CG | Architectural Visualization & 3D Rendering Studio.",
+            "Architectural Visualization &amp; 3D Rendering for Global Design Teams",
             INDEX,
         )
-        self.assertIn("architects, interior designers and real estate developers worldwide", INDEX)
-        self.assertNotIn("Commercial interiors, visualized and delivered with precision.", INDEX)
+        self.assertIn("architectural visualization services", INDEX.lower())
+        self.assertNotIn("Monster CG | Architectural Visualization & 3D Rendering Studio.", INDEX)
 
     def test_technical_service_and_portfolio_come_first(self):
-        self.assertIn("<h3>CAD Drafting &amp; Technical Documentation</h3>", INDEX)
-        self.assertIn("<h3>Interior Visualization</h3>", INDEX)
-        self.assertIn('id="drawings"', INDEX)
-        self.assertIn('id="work"', INDEX)
-        first_service = INDEX.index("<h3>CAD Drafting &amp; Technical Documentation</h3>")
-        visualization_service = INDEX.index("<h3>Interior Visualization</h3>")
-        self.assertLess(first_service, visualization_service)
-        self.assertLess(INDEX.index('id="drawings"'), INDEX.index('id="work"'))
+        self.assertIn('href="/services/cad-drafting-services/"', INDEX)
+        self.assertIn('href="/portfolio/"', INDEX)
+        self.assertIn('id="capabilities"', INDEX)
+        self.assertIn('id="selected-work"', INDEX)
+        self.assertLess(INDEX.index('id="capabilities"'), INDEX.index('id="selected-work"'))
 
     def test_primary_calls_to_action_request_a_scope_review(self):
         self.assertIn("Send a Project Brief", INDEX)
-        self.assertIn("View Technical Drawings", INDEX)
-        self.assertIn("Start with a paid pilot when appropriate", INDEX)
+        self.assertIn("Explore Capabilities", INDEX)
+        self.assertIn("View Selected Work", INDEX)
 
     def test_professional_service_structured_data_is_valid(self):
         match = re.search(
@@ -44,8 +41,8 @@ class SitePositioningTests(unittest.TestCase):
         self.assertIsNotNone(match)
         payload = json.loads(match.group(1))
         self.assertEqual(payload["@type"], "ProfessionalService")
-        self.assertEqual(payload["name"], "Monster Design Studio")
-        self.assertIn("CAD drafting", payload["description"])
+        self.assertEqual(payload["name"], "Monster CG")
+        self.assertIn("Architectural visualization", payload["description"])
         self.assertNotIn("address", payload)
         self.assertNotIn("priceRange", payload)
 
@@ -59,12 +56,11 @@ class SitePositioningTests(unittest.TestCase):
             for match in re.finditer(r'\bid\s*=\s*(["\'])(.*?)\1', INDEX, re.I | re.S)
         }
         for required_href in (
-            "#capabilities",
-            "#drawings",
-            "#work",
-            "#process",
-            "#about",
-            "#contact",
+            "/services/",
+            "/portfolio/",
+            "/process/",
+            "/about/",
+            "/contact/",
         ):
             self.assertIn(required_href, hrefs)
         for href in hrefs:
@@ -80,7 +76,7 @@ class SitePositioningTests(unittest.TestCase):
         )
         for match in attributes:
             value = match.group(2)
-            if value.lower().startswith(("http://", "https://", "//", "mailto:", "tel:", "#")):
+            if value.lower().startswith(("http://", "https://", "//", "mailto:", "tel:", "#", "/")):
                 continue
             relative = value.split("?", 1)[0].split("#", 1)[0]
             if relative:
@@ -155,7 +151,7 @@ class SitePositioningTests(unittest.TestCase):
             INDEX,
         )
         self.assertIn("architectural visualization services", INDEX.lower())
-        self.assertIn("outsource CAD drafting services", INDEX.lower())
+        self.assertIn("outsource cad drafting services", INDEX.lower())
         self.assertIn('href="/portfolio/"', INDEX)
         self.assertIn('href="/privacy-policy/"', INDEX)
 
