@@ -13,5 +13,6 @@
 | `/portfolio/` | architectural visualization portfolio | Portfolio |
 | `/blog/` | architectural visualization guidance | Informational |
 | `/contact/` | architectural rendering project brief | Transactional |
+| `/ar-ae/` | خدمات التصور المعماري في الإمارات | Commercial, Arabic UAE entry point |
 
-No city, country or doorway pages are included. The site does not target licensed architecture, permit, stamping or engineering keywords.
+The Arabic UAE page is a language entry point, not evidence of a UAE office or local professional licensing. No city, country or doorway pages are included. The site does not target licensed architecture, permit, stamping or engineering keywords.

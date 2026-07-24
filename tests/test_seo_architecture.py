@@ -113,6 +113,19 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertIn('lang="ar" dir="rtl"', arabic)
         self.assertIn('href="/ar-ae/privacy-policy/"', arabic)
 
+    def test_sitemap_includes_english_and_uae_arabic_entry_points(self):
+        root = ET.parse(ROOT / "sitemap.xml").getroot()
+        locations = {
+            node.text
+            for node in root.findall(
+                "{http://www.sitemaps.org/schemas/sitemap/0.9}url/"
+                "{http://www.sitemaps.org/schemas/sitemap/0.9}loc"
+            )
+        }
+        self.assertIn("https://monster-cg.com/", locations)
+        self.assertIn("https://monster-cg.com/ar-ae/", locations)
+        self.assertIn("https://monster-cg.com/ar-ae/privacy-policy/", locations)
+
 
 if __name__ == "__main__":
     unittest.main()

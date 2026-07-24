@@ -46,3 +46,10 @@ git diff --check
 The site intentionally uses Email and WhatsApp rather than a form that falsely claims to submit data. Monster CG provides remote visualization, drafting and technical-documentation production support; it does not provide local approvals, professional stamping or engineering certification.
 
 The files in `assets/brand/home/` are original non-project support imagery for brand atmosphere and workflow sections; portfolio evidence continues to use the existing project assets only.
+
+## Measurement baseline
+
+1. In Search Console, export the previous 28 days of clicks, impressions, average position, top queries, top pages, index coverage, and Core Web Vitals before launch.
+2. Submit the updated sitemap and request indexing for `/`, `/services/`, `/services/cad-drafting-services/`, and `/ar-ae/` after production verification.
+3. Add GA4 only with a consent-aware implementation. Track `project-brief`, `whatsapp-inquiry`, `email-inquiry`, `language-switch`, `contact-form-start`, and `contact-form-submit` when GA4 is configured.
+4. Compare the same Search Console window monthly; do not claim a ranking or lead guarantee.

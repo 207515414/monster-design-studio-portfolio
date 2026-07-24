@@ -14,3 +14,7 @@
 | Jan 2027 | How Hospitality Designers Use 3D Rendering Before Construction | Informational | Commercial hospitality rendering |
 
 Publish only after an editor verifies technical claims and pairs each article with a relevant internal link and, where appropriate, anonymized portfolio imagery.
+
+## UAE Arabic adaptation
+
+Translate only finalized, English-first service and inquiry content for `/ar-ae/`. Adapt terms for the UAE audience without asserting a local office, local certification, permit authority, or local project history. Keep the English page as the default global entry point and use reciprocal language links rather than automatic redirects.
