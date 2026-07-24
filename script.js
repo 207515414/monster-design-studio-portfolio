@@ -311,6 +311,41 @@ bindFilters();
 bindMobileNav();
 observeReveals();
 
+const projectBriefDialog = document.querySelector("#projectBriefDialog");
+const projectBriefForm = document.querySelector("#projectBriefForm");
+const projectBriefStatus = projectBriefForm?.querySelector(".lead-status");
+const projectBriefSubmit = projectBriefForm?.querySelector('button[type="submit"]');
+
+function openProjectBrief(event) {
+  event.preventDefault();
+  if (typeof projectBriefDialog?.showModal === "function") projectBriefDialog.showModal();
+  else projectBriefDialog?.setAttribute("open", "");
+}
+
+document.querySelectorAll("[data-open-project-brief]").forEach((link) => link.addEventListener("click", openProjectBrief));
+projectBriefDialog?.querySelector(".lead-dialog-close")?.addEventListener("click", () => projectBriefDialog.close());
+projectBriefDialog?.addEventListener("click", (event) => { if (event.target === projectBriefDialog) projectBriefDialog.close(); });
+projectBriefForm?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  if (!projectBriefForm.reportValidity()) return;
+  const payload = Object.fromEntries(new FormData(projectBriefForm).entries());
+  projectBriefStatus.textContent = "Sending your project brief…";
+  projectBriefStatus.classList.remove("success");
+  projectBriefSubmit.disabled = true;
+  try {
+    const response = await fetch("/api/leads", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "We could not send your brief.");
+    projectBriefForm.reset();
+    projectBriefStatus.textContent = "Thank you. Your project brief has been received.";
+    projectBriefStatus.classList.add("success");
+  } catch (error) {
+    projectBriefStatus.textContent = `${error.message} Please email or WhatsApp us instead.`;
+  } finally {
+    projectBriefSubmit.disabled = false;
+  }
+});
+
 document.querySelectorAll("[data-track]").forEach((link) => {
   link.addEventListener("click", () => {
     document.documentElement.dataset.lastCta = link.dataset.track;
