@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 INDEX = (ROOT / "index.html").read_text(encoding="utf-8")
 DATA = (ROOT / "assets/data.js").read_text(encoding="utf-8")
 SCRIPT = (ROOT / "script.js").read_text(encoding="utf-8")
+STYLES = (ROOT / "styles.css").read_text(encoding="utf-8")
 
 
 class SitePositioningTests(unittest.TestCase):
@@ -179,6 +180,10 @@ class SitePositioningTests(unittest.TestCase):
             self.assertTrue((ROOT / relative).is_file(), relative)
         readme = (ROOT / "README.md").read_text(encoding="utf-8").lower()
         self.assertIn("non-project support imagery", readme)
+
+    def test_header_uses_the_existing_brand_mark_without_forced_inversion(self):
+        self.assertIn('src="assets/brand/logo-mark.svg"', INDEX)
+        self.assertNotIn("filter:brightness(0) invert(1)", STYLES)
 
 
 if __name__ == "__main__":

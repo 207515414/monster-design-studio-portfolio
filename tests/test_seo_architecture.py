@@ -112,6 +112,8 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertIn('hreflang="x-default" href="https://monster-cg.com/"', english)
         self.assertIn('lang="ar" dir="rtl"', arabic)
         self.assertIn('href="/ar-ae/privacy-policy/"', arabic)
+        self.assertIn('href="../styles.css"', arabic)
+        self.assertIn('src="../assets/brand/logo-mark.svg"', arabic)
 
     def test_sitemap_includes_english_and_uae_arabic_entry_points(self):
         root = ET.parse(ROOT / "sitemap.xml").getroot()
