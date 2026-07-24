@@ -6,7 +6,7 @@ Capture qualified project briefs without compromising the editorial, portfolio-l
 
 ## Chosen approach
 
-Use Formspree as the form-processing service. It provides a hosted, password-protected submission dashboard and sends new-submission notifications to `zhangzheng270@gmail.com`. The website will not store customer submissions on the VPS.
+Use a self-hosted, low-resource lead service on the existing VPS. Nginx continues to serve the static website and reverse-proxies only `/api/leads` and `/admin/leads` to a local lightweight application. The application uses SQLite for lead storage and sends new-lead notifications to `zhangzheng270@gmail.com` through Gmail SMTP with a Gmail app password.
 
 ## Visitor experience
 
@@ -18,20 +18,24 @@ Use Formspree as the form-processing service. It provides a hosted, password-pro
 
 ## Data and privacy
 
-- Formspree receives the submitted data and sends a notification to the owner Gmail address.
+- The Monster CG VPS receives the submitted data, saves it locally, and sends a notification to the owner Gmail address.
 - The form includes this statement with a link to the existing privacy policy: “We use your details only to respond to your inquiry and manage your project. We do not sell your information. See our Privacy Policy.”
 - No claim that data is never processed by a third-party provider will be made.
 
 ## Technical boundaries
 
-- The Formspree endpoint is supplied by the owner after creating a Formspree form; it must not be guessed or committed as a placeholder that makes the live form appear functional.
-- Add a honeypot and Formspree-supported anti-spam controls where available.
+- The application uses Node.js with the built-in HTTP and SQLite capabilities only; no Docker, database server, or large framework is introduced.
+- It is run by `systemd` as a dedicated non-root service and listens only on `127.0.0.1`.
+- `/admin/leads` is protected by an owner-set password hash, and API responses use `Cache-Control: no-store`.
+- Add a honeypot, request-size cap, rate limit, and Cloudflare Turnstile before public release.
+- Gmail SMTP credentials, the admin password hash, and the Turnstile secret are stored only in a VPS environment file outside the Git repository.
+- A daily SQLite backup runs on the VPS and retains a bounded number of copies.
 - Preserve a no-JavaScript fallback to email and WhatsApp.
 - Track form-open and successful-submit events through the existing `data-track` convention; do not transmit analytics until an analytics property is configured.
 
 ## Verification
 
 - Validate required fields and keyboard-close behavior for the dialog.
-- Submit a test lead to verify both the Formspree dashboard and Gmail notification.
-- Confirm the form does not submit while the Formspree endpoint is absent.
+- Submit a test lead to verify both the private admin inbox and Gmail notification.
+- Confirm the API rejects malformed, oversized, and rate-limited requests.
 - Re-run static link and page tests before release.
