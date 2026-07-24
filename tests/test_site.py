@@ -174,6 +174,16 @@ class SitePositioningTests(unittest.TestCase):
         self.assertIn('data-track="project-brief"', INDEX)
         self.assertIn('data-track="whatsapp-inquiry"', INDEX)
 
+    def test_homepage_support_images_are_local_and_labelled_non_project(self):
+        for relative in (
+            "assets/brand/home/hero-production-atmosphere.webp",
+            "assets/brand/home/cad-production-detail.webp",
+            "assets/brand/home/review-workflow-atmosphere.webp",
+        ):
+            self.assertTrue((ROOT / relative).is_file(), relative)
+        readme = (ROOT / "README.md").read_text(encoding="utf-8").lower()
+        self.assertIn("non-project support imagery", readme)
+
 
 if __name__ == "__main__":
     unittest.main()

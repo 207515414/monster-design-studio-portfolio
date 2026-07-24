@@ -44,3 +44,5 @@ git diff --check
 ```
 
 The site intentionally uses Email and WhatsApp rather than a form that falsely claims to submit data. Monster CG provides remote visualization, drafting and technical-documentation production support; it does not provide local approvals, professional stamping or engineering certification.
+
+The files in `assets/brand/home/` are original non-project support imagery for brand atmosphere and workflow sections; portfolio evidence continues to use the existing project assets only.
