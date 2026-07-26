@@ -175,6 +175,7 @@ class SitePositioningTests(unittest.TestCase):
         for relative in (
             "assets/brand/home/hero-production-atmosphere.webp",
             "assets/brand/home/cad-production-detail.webp",
+            "assets/brand/home/cad-production-detail-900.webp",
             "assets/brand/home/review-workflow-atmosphere.webp",
         ):
             self.assertTrue((ROOT / relative).is_file(), relative)
