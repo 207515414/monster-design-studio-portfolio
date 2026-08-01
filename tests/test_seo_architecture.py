@@ -128,6 +128,44 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertIn("https://monster-cg.com/ar-ae/", locations)
         self.assertIn("https://monster-cg.com/ar-ae/privacy-policy/", locations)
 
+    def test_strengthened_pages_are_substantial_and_well_linked(self):
+        strengthened_pages = (*INDUSTRY_PAGES,
+            "portfolio/index.html",
+            "portfolio/commercial-hotel-visualization/index.html",
+            "portfolio/shanghai-duplex/index.html",
+            "portfolio/guangzhou-villa/index.html",
+            "portfolio/riverfront-residence/index.html",
+            "portfolio/bank-office/index.html",
+            "blog/index.html",
+            "blog/what-files-are-needed-for-a-3d-rendering-project/index.html",
+            "blog/architectural-visualization-brief/index.html",
+            "blog/paid-rendering-test-project/index.html",
+            "blog/architectural-rendering-cost-factors/index.html",
+        )
+        for relative in strengthened_pages:
+            with self.subTest(relative=relative):
+                page = (ROOT / relative).read_text(encoding="utf-8")
+                visible = re.sub(r"<script\b.*?</script>|<style\b.*?</style>|<[^>]+>", " ", page, flags=re.I | re.S)
+                words = re.findall(r"[A-Za-zÀ-ÿ']+", visible)
+                internal_links = set(re.findall(r'href="(/[^"]+)"', page, re.I))
+                self.assertGreaterEqual(len(words), 175, relative)
+                self.assertGreaterEqual(len(internal_links), 6, relative)
+
+    def test_changed_sitemap_entries_have_real_lastmod_dates(self):
+        root = ET.parse(ROOT / "sitemap.xml").getroot()
+        namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+        changed = {
+            "https://monster-cg.com/portfolio/",
+            "https://monster-cg.com/blog/",
+            *(f"https://monster-cg.com/{relative.removesuffix('index.html')}" for relative in INDUSTRY_PAGES),
+        }
+        dated = {
+            node.find(f"{namespace}loc").text
+            for node in root.findall(f"{namespace}url")
+            if node.find(f"{namespace}lastmod") is not None
+        }
+        self.assertTrue(changed.issubset(dated), sorted(changed - dated))
+
 
 if __name__ == "__main__":
     unittest.main()

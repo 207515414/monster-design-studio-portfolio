@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://monster-cg.com/</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
+  <url><loc>https://monster-cg.com/</loc><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://monster-cg.com/ar-ae/</loc></url>
   <url><loc>https://monster-cg.com/ar-ae/privacy-policy/</loc></url>
-
   <url><loc>https://monster-cg.com/services/</loc></url>
-  <url><loc>https://monster-cg.com/portfolio/</loc></url>
+  <url><loc>https://monster-cg.com/portfolio/</loc><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://monster-cg.com/process/</loc></url>
   <url><loc>https://monster-cg.com/about/</loc></url>
-  <url><loc>https://monster-cg.com/faq/</loc></url>
-  <url><loc>https://monster-cg.com/blog/</loc></url>
+  <url><loc>https://monster-cg.com/faq/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/blog/</loc><lastmod>2026-08-01</lastmod></url>
   <url><loc>https://monster-cg.com/contact/</loc></url>
   <url><loc>https://monster-cg.com/privacy-policy/</loc></url>
   <url><loc>https://monster-cg.com/services/architectural-visualization-services/</loc></url>
@@ -22,18 +17,17 @@
   <url><loc>https://monster-cg.com/services/commercial-hospitality-rendering/</loc></url>
   <url><loc>https://monster-cg.com/services/cad-drafting-services/</loc></url>
   <url><loc>https://monster-cg.com/services/interior-elevation-shop-drawing-services/</loc></url>
-  <url><loc>https://monster-cg.com/industries/architects/</loc></url>
-  <url><loc>https://monster-cg.com/industries/interior-designers/</loc></url>
-  <url><loc>https://monster-cg.com/industries/real-estate-developers/</loc></url>
-  <url><loc>https://monster-cg.com/industries/fit-out-contractors/</loc></url>
-  <url><loc>https://monster-cg.com/portfolio/commercial-hotel-visualization/</loc></url>
-  <url><loc>https://monster-cg.com/portfolio/shanghai-duplex/</loc></url>
-  <url><loc>https://monster-cg.com/portfolio/guangzhou-villa/</loc></url>
-  <url><loc>https://monster-cg.com/blog/what-files-are-needed-for-a-3d-rendering-project/</loc></url>
-  <url><loc>https://monster-cg.com/blog/architectural-visualization-brief/</loc></url>
-  <url><loc>https://monster-cg.com/blog/paid-rendering-test-project/</loc></url>
-
-  <url><loc>https://monster-cg.com/blog/architectural-rendering-cost-factors/</loc></url>
-  <url><loc>https://monster-cg.com/portfolio/riverfront-residence/</loc></url>
-  <url><loc>https://monster-cg.com/portfolio/bank-office/</loc></url>
+  <url><loc>https://monster-cg.com/industries/architects/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/industries/interior-designers/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/industries/real-estate-developers/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/industries/fit-out-contractors/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/portfolio/commercial-hotel-visualization/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/portfolio/shanghai-duplex/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/portfolio/guangzhou-villa/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/portfolio/riverfront-residence/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/portfolio/bank-office/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/blog/what-files-are-needed-for-a-3d-rendering-project/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/blog/architectural-visualization-brief/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/blog/paid-rendering-test-project/</loc><lastmod>2026-08-01</lastmod></url>
+  <url><loc>https://monster-cg.com/blog/architectural-rendering-cost-factors/</loc><lastmod>2026-08-01</lastmod></url>
 </urlset>
