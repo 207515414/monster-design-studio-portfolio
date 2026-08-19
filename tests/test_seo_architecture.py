@@ -90,6 +90,12 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertIn(".js .reveal {", css)
         self.assertIn(".js .reveal.is-visible {", css)
 
+    def test_china_site_self_hosts_an_openly_licensed_readable_font(self):
+        css = (ROOT / "zh" / "zh.css").read_text(encoding="utf-8")
+        self.assertIn("font-family: \"Monster Noto Sans SC\"", css)
+        self.assertIn("url(\"../assets/fonts/noto-sans-sc-400.ttf\")", css)
+        self.assertTrue((ROOT / "assets/fonts/OFL-1.1.txt").is_file())
+
     def test_china_contact_page_explains_what_an_owner_can_send(self):
         contact = (ROOT / "zh/contact/index.html").read_text(encoding="utf-8")
         self.assertIn("住宅 / 酒店 / 商业空间 / 团队合作", contact)
