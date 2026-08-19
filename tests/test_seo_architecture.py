@@ -96,6 +96,24 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertIn("url(\"../assets/fonts/noto-sans-sc-400.ttf\")", css)
         self.assertTrue((ROOT / "assets/fonts/OFL-1.1.txt").is_file())
 
+    def test_china_site_uses_a_dedicated_flat_logo_without_changing_global_logo(self):
+        china_logo = ROOT / "assets/zh/logo-mark-flat.svg"
+        global_logo = (ROOT / "assets/brand/logo-mark.svg").read_text(encoding="utf-8")
+        self.assertTrue(china_logo.is_file(), china_logo)
+        china_svg = china_logo.read_text(encoding="utf-8")
+        self.assertIn('fill="#101514"', china_svg)
+        self.assertIn('fill="#ffffff"', china_svg)
+        self.assertNotIn("#0071e3", china_svg)
+        self.assertNotIn("#8e8e93", china_svg)
+        self.assertIn("#0071e3", global_logo)
+        for relative in ("zh/index.html", "zh/contact/index.html", "zh/privacy-policy/index.html"):
+            page = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertIn("logo-mark-flat.svg", page)
+        for relative in ("index.html", "ar-ae/index.html"):
+            page = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertIn("assets/brand/logo-mark.svg", page)
+            self.assertNotIn("logo-mark-flat.svg", page)
+
     def test_public_css_uses_only_self_hosted_font_assets(self):
         css = (ROOT / "styles.css").read_text(encoding="utf-8")
         self.assertIn('url("assets/fonts/noto-sans-latin-400.ttf")', css)
