@@ -75,6 +75,16 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertIn("z-787-00", contact)
         self.assertNotIn("二维码将在上线前", contact)
 
+    def test_china_homepage_has_plain_language_owner_path_and_local_motion(self):
+        page = (ROOT / "zh/index.html").read_text(encoding="utf-8")
+        script = ROOT / "zh/zh.js"
+        self.assertIn("让空间，在施工前就被看见", page)
+        self.assertIn("我是业主", page)
+        self.assertIn("户型图、现场照片或参考图片", page)
+        self.assertIn("发资料，获取项目建议", page)
+        self.assertIn('src="zh.js"', page)
+        self.assertTrue(script.is_file(), script)
+
     def test_china_ip_redirect_is_server_side_and_can_be_overridden(self):
         redirect_config = ROOT / "deploy/nginx/china-ip-redirect.conf"
         country_map = ROOT / "deploy/nginx/cloudflare-country-map.conf"
