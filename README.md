@@ -43,6 +43,15 @@ node --check assets/data.js
 git diff --check
 ```
 
+## China-site deployment
+
+- Chinese customer entry point: `https://monster-cg.com/zh/`
+- Existing English pages and their contact methods remain unchanged.
+- The server-side China-IP redirect configuration is documented in `deploy/nginx/README.md`.
+- The redirect requires the Nginx GeoIP2 module and an up-to-date country database on the Alibaba Cloud server; it is not active until the server configuration is installed and tested.
+- `assets/zh/china-site-hero.webp` is original, AI-generated support imagery for the China-site landing page. It does not depict a client project.
+- Before publishing `/zh/contact/`, replace its QR-code notice with the studio's confirmed official WeChat QR-code image.
+
 The site intentionally uses Email and WhatsApp rather than a form that falsely claims to submit data. Monster CG provides remote visualization, drafting and technical-documentation production support; it does not provide local approvals, professional stamping or engineering certification.
 
 The files in `assets/brand/home/` are original non-project support imagery for brand atmosphere and workflow sections; portfolio evidence continues to use the existing project assets only.
