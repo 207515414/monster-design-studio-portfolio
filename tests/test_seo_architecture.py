@@ -67,6 +67,14 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertNotIn("WhatsApp", page)
         self.assertNotIn("Facebook", page)
 
+    def test_china_contact_page_uses_the_confirmed_wechat_qr_code(self):
+        contact = (ROOT / "zh/contact/index.html").read_text(encoding="utf-8")
+        qr_code = ROOT / "assets/zh/wechat-qr.jpg"
+        self.assertTrue(qr_code.is_file(), qr_code)
+        self.assertIn("assets/zh/wechat-qr.jpg", contact)
+        self.assertIn("z-787-00", contact)
+        self.assertNotIn("二维码将在上线前", contact)
+
     def test_china_ip_redirect_is_server_side_and_can_be_overridden(self):
         redirect_config = ROOT / "deploy/nginx/china-ip-redirect.conf"
         geoip_map = ROOT / "deploy/nginx/geoip2-country-map.conf"
