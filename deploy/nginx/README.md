@@ -4,13 +4,13 @@ The Chinese site is served from `https://monster-cg.com/zh/`. Existing English p
 
 ## Server prerequisites
 
-1. Install the Nginx GeoIP2 module on the Alibaba Cloud server.
-2. Obtain a current `GeoLite2-Country.mmdb` database and install it at `/etc/nginx/geoip/GeoLite2-Country.mmdb`.
-3. If the site is served behind a CDN or proxy, configure Nginx `real_ip_header` and trusted proxy ranges before GeoIP lookup. GeoIP must receive the visitor's real public IP.
+1. Keep the `monster-cg.com`, `www` and `web` DNS records proxied through Cloudflare (orange-cloud status enabled).
+2. Cloudflare supplies the visitor country as the `CF-IPCountry` request header. No Nginx GeoIP module or server-side country database is needed.
+3. A request that bypasses Cloudflare has no country header and remains on the English home page.
 
 ## Nginx include order
 
-1. Include `geoip2-country-map.conf` in Nginx's `http {}` block.
+1. Include `cloudflare-country-map.conf` in Nginx's `http {}` block.
 2. Include `china-ip-redirect.conf` in the `server {}` block that serves `monster-cg.com`.
 3. Validate with `sudo nginx -t`, then reload only after it succeeds.
 

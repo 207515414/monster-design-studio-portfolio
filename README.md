@@ -48,7 +48,7 @@ git diff --check
 - Chinese customer entry point: `https://monster-cg.com/zh/`
 - Existing English pages and their contact methods remain unchanged.
 - The server-side China-IP redirect configuration is documented in `deploy/nginx/README.md`.
-- The redirect requires the Nginx GeoIP2 module and an up-to-date country database on the Alibaba Cloud server; it is not active until the server configuration is installed and tested.
+- The redirect uses Cloudflare's visitor-country header. It is active only while the public DNS records remain proxied through Cloudflare and the reviewed Nginx configuration is installed and tested.
 - `assets/zh/china-site-hero.webp` is original, AI-generated support imagery for the China-site landing page. It does not depict a client project.
 - The China-site contact page uses the confirmed official WeChat QR-code asset at `assets/zh/wechat-qr.jpg`. Verify that the account remains current before every production release.
 

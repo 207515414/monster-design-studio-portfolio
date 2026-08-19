@@ -77,14 +77,15 @@ class SeoArchitectureTests(unittest.TestCase):
 
     def test_china_ip_redirect_is_server_side_and_can_be_overridden(self):
         redirect_config = ROOT / "deploy/nginx/china-ip-redirect.conf"
-        geoip_map = ROOT / "deploy/nginx/geoip2-country-map.conf"
+        country_map = ROOT / "deploy/nginx/cloudflare-country-map.conf"
         install_guide = ROOT / "deploy/nginx/README.md"
         self.assertTrue(redirect_config.is_file(), redirect_config)
-        self.assertTrue(geoip_map.is_file(), geoip_map)
+        self.assertTrue(country_map.is_file(), country_map)
         self.assertTrue(install_guide.is_file(), install_guide)
-        config = redirect_config.read_text(encoding="utf-8") + geoip_map.read_text(encoding="utf-8")
+        config = redirect_config.read_text(encoding="utf-8") + country_map.read_text(encoding="utf-8")
         guide = install_guide.read_text(encoding="utf-8")
-        self.assertIn("geoip2", config)
+        self.assertIn("$http_cf_ipcountry", config)
+        self.assertNotIn("geoip2", config.lower())
         self.assertIn("CN", config)
         self.assertIn("/zh/", config)
         self.assertIn("monster_locale", config)
