@@ -106,9 +106,12 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertNotIn("#0071e3", china_svg)
         self.assertNotIn("#8e8e93", china_svg)
         self.assertIn("#0071e3", global_logo)
+        china_css = (ROOT / "zh/zh.css").read_text(encoding="utf-8")
+        self.assertIn(".brand img:not(.brand-logo-flat)", china_css)
         for relative in ("zh/index.html", "zh/contact/index.html", "zh/privacy-policy/index.html"):
             page = (ROOT / relative).read_text(encoding="utf-8")
             self.assertIn("logo-mark-flat.svg", page)
+            self.assertIn('class="brand-logo-flat"', page)
         for relative in ("index.html", "ar-ae/index.html"):
             page = (ROOT / relative).read_text(encoding="utf-8")
             self.assertIn("assets/brand/logo-mark.svg", page)
