@@ -96,6 +96,14 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertIn("url(\"../assets/fonts/noto-sans-sc-400.ttf\")", css)
         self.assertTrue((ROOT / "assets/fonts/OFL-1.1.txt").is_file())
 
+    def test_public_css_uses_only_self_hosted_font_assets(self):
+        css = (ROOT / "styles.css").read_text(encoding="utf-8")
+        self.assertIn('url("assets/fonts/noto-sans-latin-400.ttf")', css)
+        self.assertIn('font-family: "Monster Noto Sans Latin"', css)
+        self.assertNotIn("Georgia", css)
+        self.assertNotIn("Arial", css)
+        self.assertNotIn("http", css)
+
     def test_china_contact_page_explains_what_an_owner_can_send(self):
         contact = (ROOT / "zh/contact/index.html").read_text(encoding="utf-8")
         self.assertIn("住宅 / 酒店 / 商业空间 / 团队合作", contact)
