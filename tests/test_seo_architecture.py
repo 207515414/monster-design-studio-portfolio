@@ -52,7 +52,7 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertIn("图纸深化", page)
         self.assertIn("空间效果表现", page)
         self.assertIn("三维动画", page)
-        self.assertIn("住宅与商业空间", page)
+        self.assertIn("住宅、酒店与商业空间", page)
         self.assertIn('assets/zh/china-site-hero.webp', page)
         self.assertTrue((ROOT / "assets/zh/china-site-hero.webp").is_file())
         for relative in (
@@ -62,7 +62,7 @@ class SeoArchitectureTests(unittest.TestCase):
         ):
             self.assertTrue((ROOT / relative).is_file(), relative)
             self.assertIn(relative, page)
-        self.assertIn('class="service-visual"', page)
+        self.assertIn('class="service-image"', page)
         self.assertNotIn("外包", page)
         self.assertNotIn("WhatsApp", page)
         self.assertNotIn("Facebook", page)
@@ -84,6 +84,16 @@ class SeoArchitectureTests(unittest.TestCase):
         self.assertIn("发资料，获取项目建议", page)
         self.assertIn('src="zh.js"', page)
         self.assertTrue(script.is_file(), script)
+
+    def test_china_reveal_content_stays_visible_without_javascript(self):
+        css = (ROOT / "zh" / "zh.css").read_text(encoding="utf-8")
+        self.assertIn(".js .reveal {", css)
+        self.assertIn(".js .reveal.is-visible {", css)
+
+    def test_china_contact_page_explains_what_an_owner_can_send(self):
+        contact = (ROOT / "zh/contact/index.html").read_text(encoding="utf-8")
+        self.assertIn("住宅 / 酒店 / 商业空间 / 团队合作", contact)
+        self.assertIn("预计开始时间", contact)
 
     def test_china_ip_redirect_is_server_side_and_can_be_overridden(self):
         redirect_config = ROOT / "deploy/nginx/china-ip-redirect.conf"
