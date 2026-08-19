@@ -37,6 +37,59 @@ INDUSTRY_PAGES = (
 
 
 class SeoArchitectureTests(unittest.TestCase):
+    def test_china_site_is_a_separate_chinese_entry_point(self):
+        chinese_home = ROOT / "zh/index.html"
+        chinese_contact = ROOT / "zh/contact/index.html"
+        chinese_privacy = ROOT / "zh/privacy-policy/index.html"
+        for path in (chinese_home, chinese_contact, chinese_privacy):
+            with self.subTest(path=path):
+                self.assertTrue(path.is_file(), path)
+        if not chinese_home.is_file():
+            return
+
+        page = chinese_home.read_text(encoding="utf-8")
+        self.assertIn('lang="zh-CN"', page)
+        self.assertIn("图纸深化", page)
+        self.assertIn("空间效果表现", page)
+        self.assertIn("三维动画", page)
+        self.assertIn("住宅与商业空间", page)
+        self.assertIn('assets/zh/china-site-hero.webp', page)
+        self.assertTrue((ROOT / "assets/zh/china-site-hero.webp").is_file())
+        for relative in (
+            "assets/zh/drawing-detail.webp",
+            "assets/zh/visualization-detail.webp",
+            "assets/zh/animation-detail.webp",
+        ):
+            self.assertTrue((ROOT / relative).is_file(), relative)
+            self.assertIn(relative, page)
+        self.assertIn('class="service-visual"', page)
+        self.assertNotIn("外包", page)
+        self.assertNotIn("WhatsApp", page)
+        self.assertNotIn("Facebook", page)
+
+    def test_china_contact_page_uses_the_confirmed_wechat_qr_code(self):
+        contact = (ROOT / "zh/contact/index.html").read_text(encoding="utf-8")
+        qr_code = ROOT / "assets/zh/wechat-qr.jpg"
+        self.assertTrue(qr_code.is_file(), qr_code)
+        self.assertIn("assets/zh/wechat-qr.jpg", contact)
+        self.assertIn("z-787-00", contact)
+        self.assertNotIn("二维码将在上线前", contact)
+
+    def test_china_ip_redirect_is_server_side_and_can_be_overridden(self):
+        redirect_config = ROOT / "deploy/nginx/china-ip-redirect.conf"
+        geoip_map = ROOT / "deploy/nginx/geoip2-country-map.conf"
+        install_guide = ROOT / "deploy/nginx/README.md"
+        self.assertTrue(redirect_config.is_file(), redirect_config)
+        self.assertTrue(geoip_map.is_file(), geoip_map)
+        self.assertTrue(install_guide.is_file(), install_guide)
+        config = redirect_config.read_text(encoding="utf-8") + geoip_map.read_text(encoding="utf-8")
+        guide = install_guide.read_text(encoding="utf-8")
+        self.assertIn("geoip2", config)
+        self.assertIn("CN", config)
+        self.assertIn("/zh/", config)
+        self.assertIn("monster_locale", config)
+        self.assertIn("VPN", guide)
+
     def test_required_static_pages_exist(self):
         for relative in (*CORE_PAGES, *SERVICE_PAGES, *INDUSTRY_PAGES):
             with self.subTest(relative=relative):
