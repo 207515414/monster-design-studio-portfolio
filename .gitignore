@@ -1,2 +1,9 @@
 .worktrees/
 tests/__pycache__/
+
+.env
+.env.*
+!server/.env.example
+__pycache__/
+*.sqlite3
+*.sqlite3-*

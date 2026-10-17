@@ -52,7 +52,7 @@ git diff --check
 - `assets/zh/china-site-hero.webp` is original, AI-generated support imagery for the China-site landing page. It does not depict a client project.
 - The China-site contact page uses the confirmed official WeChat QR-code asset at `assets/zh/wechat-qr.jpg`. Verify that the account remains current before every production release.
 
-The site intentionally uses Email and WhatsApp rather than a form that falsely claims to submit data. Monster CG provides remote visualization, drafting and technical-documentation production support; it does not provide local approvals, professional stamping or engineering certification.
+The inquiry form uses the optional self-hosted SMTP API documented in `deploy/QUOTE-SERVICE.md`. Without a configured API it explicitly remains unavailable; Email and WhatsApp remain usable. Monster CG provides remote visualization, drafting and technical-documentation production support; it does not provide local approvals, professional stamping or engineering certification.
 
 The files in `assets/brand/home/` are original non-project support imagery for brand atmosphere and workflow sections; portfolio evidence continues to use the existing project assets only.
 
@@ -62,3 +62,7 @@ The files in `assets/brand/home/` are original non-project support imagery for b
 2. Submit the updated sitemap and request indexing for `/`, `/services/`, `/services/cad-drafting-services/`, and `/ar-ae/` after production verification.
 3. Add GA4 only with a consent-aware implementation. Track `project-brief`, `whatsapp-inquiry`, `email-inquiry`, `language-switch`, `contact-form-start`, and `contact-form-submit` when GA4 is configured.
 4. Compare the same Search Console window monthly; do not claim a ranking or lead guarantee.
+
+## Conversion remediation (October 2026)
+
+The owner confirms self-hosted deployment. See `REMEDIATION.md` for scope and `deploy/QUOTE-SERVICE.md` for the private SMTP service, Nginx proxy, analytics consent contract and release verification. No production changes have been made by this remediation.

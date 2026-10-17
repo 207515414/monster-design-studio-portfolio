@@ -15,23 +15,23 @@ STYLES = (ROOT / "styles.css").read_text(encoding="utf-8")
 class SitePositioningTests(unittest.TestCase):
     def test_hero_states_b2b_remote_production_positioning(self):
         self.assertIn(
-            "Architectural Visualization &amp; 3D Rendering for Global Design Teams",
+            "Photorealistic 3D Rendering for Architects &amp; Interior Designers",
             INDEX,
         )
         self.assertIn("architectural visualization services", INDEX.lower())
         self.assertNotIn("Monster CG | Architectural Visualization & 3D Rendering Studio.", INDEX)
 
-    def test_technical_service_and_portfolio_come_first(self):
+    def test_portfolio_precedes_services(self):
         self.assertIn('href="/services/cad-drafting-services/"', INDEX)
         self.assertIn('href="/portfolio/"', INDEX)
         self.assertIn('id="capabilities"', INDEX)
         self.assertIn('id="selected-work"', INDEX)
-        self.assertLess(INDEX.index('id="capabilities"'), INDEX.index('id="selected-work"'))
+        self.assertLess(INDEX.index('id="selected-work"'), INDEX.index('id="capabilities"'))
 
     def test_primary_calls_to_action_request_a_scope_review(self):
-        self.assertIn("Send a Project Brief", INDEX)
-        self.assertIn("Explore Capabilities", INDEX)
-        self.assertIn("View Selected Work", INDEX)
+        self.assertIn("Request a Quote", INDEX)
+        self.assertIn("View Our Work", INDEX)
+        self.assertIn("View All Work", INDEX)
 
     def test_professional_service_structured_data_is_valid(self):
         match = re.search(
@@ -148,11 +148,11 @@ class SitePositioningTests(unittest.TestCase):
 
     def test_homepage_uses_conversion_positioning_and_separate_portfolio_link(self):
         self.assertIn(
-            "Architectural Visualization &amp; 3D Rendering for Global Design Teams",
+            "Photorealistic 3D Rendering for Architects &amp; Interior Designers",
             INDEX,
         )
         self.assertIn("architectural visualization services", INDEX.lower())
-        self.assertIn("outsource cad drafting services", INDEX.lower())
+        self.assertIn("cad support", INDEX.lower())
         self.assertIn('href="/portfolio/"', INDEX)
         self.assertIn('href="/privacy-policy/"', INDEX)
 
@@ -189,4 +189,3 @@ class SitePositioningTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

@@ -257,7 +257,7 @@ class SeoArchitectureTests(unittest.TestCase):
                 visible = re.sub(r"<script\b.*?</script>|<style\b.*?</style>|<[^>]+>", " ", page, flags=re.I | re.S)
                 words = re.findall(r"[A-Za-zÀ-ÿ']+", visible)
                 internal_links = set(re.findall(r'href="(/[^"]+)"', page, re.I))
-                self.assertGreaterEqual(len(words), 175, relative)
+                self.assertGreaterEqual(len(words), 90 if relative.startswith("portfolio/") else 175, relative)  # Concise project descriptions, without SEO filler.
                 self.assertGreaterEqual(len(internal_links), 6, relative)
 
     def test_changed_sitemap_entries_have_real_lastmod_dates(self):
