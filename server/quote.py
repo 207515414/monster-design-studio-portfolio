@@ -21,31 +21,44 @@ def configured():
     return all(os.environ.get(k) for k in ('SMTP_HOST', 'SMTP_USER', 'SMTP_PASSWORD', 'SMTP_FROM', 'QUOTE_RATE_SECRET'))
 
 
+class ValidationError(ValueError):
+    def __init__(self, message, field=None, code='invalid_field'):
+        super().__init__(message)
+        self.field = field
+        self.code = code
+
+
 def validate(data):
     if not isinstance(data, dict):
-        raise ValueError('Please check the form fields.')
+        raise ValidationError('The request format is invalid. Refresh the page and try again.', code='invalid_payload')
     limits = {'company': (1, 160), 'email': (3, 254), 'service': (1, 80),
-              'quantity': (1, 4), 'deadline': (0, 10), 'message': (20, 5000), 'website': (0, 200)}
+              'quantity': (1, 4), 'deadline': (0, 10), 'message': (20, 5000)}
+    labels = {'company': 'Company name', 'email': 'Business email', 'service': 'Service type',
+              'quantity': 'Estimated quantity', 'deadline': 'Target date', 'message': 'Project description'}
     clean = {}
     for key, (low, high) in limits.items():
         value = data.get(key, '')
         if not isinstance(value, str) or not low <= len(value.strip()) <= high or '\x00' in value:
-            raise ValueError('Please check the form fields and project description length.')
+            raise ValidationError(f'{labels[key]} must contain {low}–{high} characters.', key)
         clean[key] = value.strip()
-    if clean['website']:
-        raise ValueError('This request could not be accepted. Please contact us by email.')
+    # Accept cached legacy forms too. Neither trap is a customer input.
+    for trap in ('website', 'contact_check'):
+        value = data.get(trap, '')
+        if not isinstance(value, str) or value.strip():
+            raise ValidationError('The submission was blocked by the spam check. Refresh the page and enter the details without autofill, or contact us by email.', code='spam_check')
     if not re.fullmatch(r"[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]+@[A-Za-z0-9](?:[A-Za-z0-9.-]*[A-Za-z0-9])?\.[A-Za-z]{2,63}", clean['email']):
-        raise ValueError('Enter a valid business email address.')
+        raise ValidationError('Enter a valid business email address.', 'email')
     if clean['service'] not in SERVICES:
-        raise ValueError('Choose a service from the list.')
+        raise ValidationError('Choose a service from the list.', 'service')
     if not re.fullmatch(r'[1-9][0-9]{0,3}', clean['quantity']) or int(clean['quantity']) > 1000:
-        raise ValueError('Enter a quantity between 1 and 1000.')
+        raise ValidationError('Enter a quantity between 1 and 1000.', 'quantity')
     if clean['deadline']:
         try:
-            if date.fromisoformat(clean['deadline']) < date.today():
-                raise ValueError()
+            target = date.fromisoformat(clean['deadline'])
         except ValueError:
-            raise ValueError('Choose today or a future target date, or leave the date blank.') from None
+            raise ValidationError('Choose a valid target date, or leave the date blank.', 'deadline') from None
+        if target < date.today():
+            raise ValidationError('Choose today or a future target date, or leave the date blank.', 'deadline')
     source = data.get('source', '/contact/')
     clean['source'] = source if isinstance(source, str) and re.fullmatch(r'/[a-zA-Z0-9/_-]{0,200}', source) else '/contact/'
     return clean
@@ -137,8 +150,10 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(429, 'Too many attempts. Please try again in one hour or use email.')
             self.connection.settimeout(10)
             data = validate(json.loads(self.rfile.read(size)))
+        except ValidationError as error:
+            return self.respond(400, str(error), field=error.field, code=error.code)
         except (ValueError, UnicodeError):
-            return self.respond(400, 'Please check your email, quantity, date and project description (20–5000 characters).')
+            return self.respond(400, 'The request could not be read. Refresh the page and try again, or use email.', code='invalid_json')
         except Exception:
             return self.respond(503, 'The form is temporarily unavailable. Please use email.')
         try:

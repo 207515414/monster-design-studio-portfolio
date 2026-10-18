@@ -67,6 +67,41 @@ class QuoteTests(unittest.TestCase):
             self.assertEqual(self.request(raw='a' * 17000)[0], 413)
             send.assert_not_called()
 
+    def test_valid_browser_cad_payload_and_new_trap(self):
+        payload = dict(company='monster cg test', email='zhangzheng270@gmail.com',
+                       service='CAD Support', quantity='3', deadline='2099-12-01',
+                       message='Website form test only. Please ignore this internal test inquiry.',
+                       contact_check='')
+        with patch.object(quote, 'send_mail') as send:
+            status, body = self.request(payload)
+            self.assertEqual(status, 200)
+            self.assertTrue(body['success'])
+            send.assert_called_once()
+
+    def test_validation_identifies_field_without_echoing_data(self):
+        with patch.object(quote, 'send_mail') as send:
+            status, body = self.request({**self.data, 'quantity': '1001'})
+            self.assertEqual(status, 400)
+            self.assertEqual(body['field'], 'quantity')
+            self.assertEqual(body['code'], 'invalid_field')
+            self.assertNotIn('designer@example.com', json.dumps(body))
+            send.assert_not_called()
+
+    def test_both_traps_still_reject_autofill_and_bots(self):
+        with patch.object(quote, 'send_mail') as send:
+            for field in ('website', 'contact_check'):
+                status, body = self.request({**self.data, field: 'private autofilled content'})
+                self.assertEqual(status, 400)
+                self.assertEqual(body['code'], 'spam_check')
+                self.assertNotIn('private autofilled content', json.dumps(body))
+            send.assert_not_called()
+
+    def test_malformed_json_is_distinct_from_field_errors(self):
+        status, body = self.request(raw='{"email":"private-data"')
+        self.assertEqual(status, 400)
+        self.assertEqual(body['code'], 'invalid_json')
+        self.assertNotIn('private-data', json.dumps(body))
+
     def test_rate_limit_is_persistent_and_expires(self):
         for _ in range(5):
             self.assertTrue(quote.allow_request('127.0.0.1', 10000))

@@ -22,6 +22,7 @@
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (!form.reportValidity() || submit.disabled) return;
+    form.querySelectorAll('[aria-invalid]').forEach((field) => field.removeAttribute('aria-invalid'));
     submit.disabled = true;
     form.setAttribute('aria-busy', 'true');
     show('Sending your inquiry…', 'pending');
@@ -30,7 +31,14 @@
       data.source = source;
       const response = await fetch('/api/quote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), signal: AbortSignal.timeout(85000) });
       const result = await response.json();
-      if (!response.ok || result.success !== true) throw new Error(result.message || 'We could not confirm sending. Please use email or WhatsApp.');
+      if (!response.ok || result.success !== true) {
+        if (['company', 'email', 'service', 'quantity', 'deadline', 'message'].includes(result.field)) {
+          const field = form.elements.namedItem(result.field);
+          field?.setAttribute('aria-invalid', 'true');
+          field?.focus();
+        }
+        throw new Error(result.message || 'We could not confirm sending. Please use email or WhatsApp.');
+      }
       show(result.message, 'success');
       window.monsterTrack?.('quote_submit_success', source);
       form.reset();
