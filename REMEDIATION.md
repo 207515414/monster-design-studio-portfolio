@@ -20,13 +20,13 @@ Confirmed contact references in index.html and contact/index.html: zhangzheng270
 - sitemap.xml: accurate lastmod updates for changed pages.
 - tests: update superseded positioning expectations and add backend behavior tests; run existing suite and JavaScript syntax checks.
 
-## Release gates
+## Initial release gates (historical)
 
-Confirm actual host; run private SMTP configuration outside the public document root; test real delivery and spam handling; install API proxy only after review. GitHub Pages alone cannot run the Python service. Verify live API status and browser failure/success flows before enabling the form. Confirm privacy text and consent integration; connect a real analytics property and verify event receipt before reporting conversions operational. No production push is authorized.
+Confirm actual host; run private SMTP configuration outside the public document root; test real delivery and spam handling; install API proxy only after review. GitHub Pages alone cannot run the Python service. Verify live API status and browser failure/success flows before enabling the form. Confirm privacy text and consent integration; connect a real analytics property and verify event receipt before reporting conversions operational. Initial audit did not authorize production release; the owner subsequently approved and deployed the changes.
 
 ## Verification results
 
-- Existing Python suite plus backend behavior tests: 45 tests passed.
+- Existing Python suite plus backend behavior tests: 49 tests passed.
 - JavaScript syntax: script.js, assets/data.js, assets/quote.js, assets/conversions.js passed `node --check`.
 - `git diff --check` passed. No configured lint, TypeScript or build commands exist; this is a directly served static site.
 - Chrome desktop/mobile checks: 1440, 390 and 320 px; home, portfolio index, hotel detail, duplex detail, services index, interior service, exterior service and contact (24 route/viewport combinations). No horizontal overflow, broken images or page JavaScript errors. Mobile menu open/Escape tested.
@@ -89,3 +89,13 @@ Confirm actual host; run private SMTP configuration outside the public document 
 - `tests/test_quote.py`
 - `tests/test_seo_architecture.py`
 - `tests/test_site.py`
+
+## 2026-10-18 deployment and analytics follow-up
+
+The owner deployed the website and Python service to Alibaba Cloud Ubuntu / Nginx. The API status returned available=true. After the validation fix, the owner confirmed a real website submission and receipt in Gmail. This supersedes the initial SMTP/server release gates above. Credentials remain outside the repository.
+
+Optional analytics implementation is LOCAL and not yet published: assets/conversions.js, assets/analytics-config.json, assets/analytics-consent.css, privacy-policy/index.html and versioned conversions script references across English pages. The real GA4 measurement ID is still required. The checked-in configuration is empty, keeping analytics disabled. No GA4 receipt is claimed.
+
+Local browser verification: before consent no Google script; after consent the expected consent/config/page_view queue; after withdrawal reload, consent false and no Google script; mobile 390px no horizontal overflow. Google network requests were blocked and a temporary test ID removed. Existing 49 Python tests remain the regression baseline. Follow deploy/ANALYTICS.md before enabling a real property.
+
+Owner supplied GA4 ID G-YXNXQPNM5P on 2026-10-18. The configuration now contains this ID for release. Server synchronization and actual GA4 event receipt still require verification.
